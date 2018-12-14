@@ -1,1 +1,49 @@
-/* You can add global styles to this file, and also import other style files */
+@import './colors';
+
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 .5em 0;
+  line-height: 1.2em;
+}
+
+p {
+  margin: 0 0 .5em 0;
+  line-height: 1.4em;
+}
+
+.underline {
+  position: relative;
+  text-transform: uppercase;
+  &:before {
+    background-color: $pavlova;
+    bottom: -.6rem;
+    content: '';
+    height: .2rem;
+    position: absolute;
+    width: 3rem;
+  }
+}
+
+.section {
+  .section-inner {
+    padding: 2rem;
+    margin: auto;
+    max-width: 80rem;
+  }
+}
+
+.carousel {
+  min-height: 15rem;
+  width: 100%;
+  img {
+    height: 15rem;
+  }
+}

@@ -1,0 +1,50 @@
+@import '../colors';
+
+.header {
+  background: $blue-bayoux;
+  background: -moz-linear-gradient(-45deg, $blue-bayoux 0%, $mulled-wine 100%);
+  background: -webkit-linear-gradient(-45deg, $blue-bayoux 0%,$mulled-wine 100%);
+  background: linear-gradient(135deg, $blue-bayoux 0%,$mulled-wine 100%);
+  color: $white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue-bayoux', endColorstr='$mulled-wine', GradientType=1);
+
+  .logo {
+    background-color: $pavlova;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 1.5em 0;
+    padding: .2rem .4rem;
+    text-transform: uppercase;
+  }
+}
+
+.services {
+
+  .service {
+    align-items: center;
+    border-bottom: .15rem solid $pavlova;
+    display: flex;
+    padding-top: .8rem;
+    max-width: 30rem;
+    img {
+      align-self: flex-start;
+      margin: 0 1.5rem .5rem 0;
+    }
+    p {
+      margin: 0 0 .5rem 0;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.projects {
+  background-color: $mine-shaft;
+
+  h3 {
+    color: $white;
+    margin-bottom: 2rem;
+  }
+}
