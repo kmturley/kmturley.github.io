@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  color: $mine-shaft;
   margin: 0;
 }
 
@@ -41,9 +42,16 @@ p {
 }
 
 .carousel {
-  min-height: 15rem;
   width: 100%;
-  img {
-    height: 15rem;
+  .drag-scroll-content {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .carousel {
+    .drag-scroll-content {
+      padding-left: calc((100% - 80rem) / 2);
+    }
   }
 }
