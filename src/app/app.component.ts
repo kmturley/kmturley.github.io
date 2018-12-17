@@ -8,14 +8,18 @@ import { SheetService } from './common/sheet.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  brands: Array<object>;
   projects: Array<object>;
 
   constructor(
     private sheetService: SheetService
   ) {
-    console.log('App Component');
-    this.sheetService.getData().subscribe((data) => {
-      this.projects = data['feed']['entry'];
+    this.sheetService.getSheet('brands').subscribe((items) => {
+      this.brands = items;
+      console.log('brands', this.brands);
+    });
+    this.sheetService.getSheet('projects').subscribe((items) => {
+      this.projects = items;
       console.log('projects', this.projects);
     });
   }

@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SheetService {
-  sheetId = '1KhjaYHc01RKvq5UrJlTdi9mz5O9IcTF5Uh-7bYdlsks';
-  sheetUrl = `https://spreadsheets.google.com/feeds/list/${this.sheetId}/od6/public/values?alt=json`;
+  sheetUrl = `https://sheets.googleapis.com/v4/spreadsheets/${environment.sheetId}/values/`;
 
   constructor(
     private http: HttpClient
   ) {}
 
-  getData() {
-    return this.http.get(this.sheetUrl);
+  getSheet(sheetName: string) {
+    return this.http.get(`${this.sheetUrl}${sheetName}?key=${environment.apiKey}`).pipe(map((data) => {
+      const rowLabels = data['values'][0];
+      return data['values'].slice(1).map((itemValue) => {
+        const newItem = {};
+        itemValue.forEach((fieldValue, fieldIndex) => {
+          newItem[rowLabels[fieldIndex]] = fieldValue;
+        });
+        return newItem;
+      });
+    }));
   }
 }

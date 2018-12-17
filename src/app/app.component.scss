@@ -98,14 +98,18 @@
   }
 }
 
-.partners {
+.brands {
   background-color: $mine-shaft;
 
   h3 {
     color: $white;
   }
 
-  img {
+  .carousel {
+    height: 6.5rem;
+  }
+
+  .brand {
     margin-right: 3rem;
     height: 4rem;
     max-width: 6rem;

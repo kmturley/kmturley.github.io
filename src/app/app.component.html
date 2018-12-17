@@ -28,8 +28,8 @@
   </div>
   <drag-scroll class="carousel">
     <a href="#" *ngFor="let project of projects" class="project">
-      <span><strong class="project-name">{{ project.gsx$name.$t }}</strong><br/>{{ project.gsx$client.$t }}</span>
-      <img [src]="project.gsx$image.$t" />
+      <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
+      <img [src]="project.image" alt="{{ project.name }}" />
     </a>
   </drag-scroll>
 </div>
@@ -45,14 +45,12 @@
     <a href="https://medium.com/beyond/6-ways-to-stay-on-top-of-emerging-technology-trends-ca6a7b27bc20" class="post" target="_blank">6 ways to stay on top of emerging technology trends</a>
   </drag-scroll>
 </div>
-<div class="section partners">
+<div class="section brands">
   <div class="section-inner">
-    <h3 class="underline">Partners</h3>
+    <h3 class="underline">Brands</h3>
   </div>
   <drag-scroll class="carousel">
-    <img src="../assets/brands/virgin.svg" alt="Virgin" />
-    <img src="../assets/brands/google.svg" alt="Google" />
-    <img src="../assets/brands/apple.svg" alt="Apple" />
+    <a href="#" *ngFor="let brand of brands"><img class="brand" [src]="brand.image" alt="{{ brand.name }}" /></a>
   </drag-scroll>
 </div>
 <div class="section footer">
