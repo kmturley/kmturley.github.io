@@ -27,17 +27,10 @@
     <h3 class="underline">Projects</h3>
   </div>
   <drag-scroll class="carousel">
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/luke.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/chubaka.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/boba.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/c3po.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/leia.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/obi.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/r2d2.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/storm.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/varder.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/yoda.png" /></a>
-    <a href="#"><img src="https://ngx-drag-scroll.fanjin.io/assets/img/yolo.png" /></a>
+    <a href="#" *ngFor="let project of projects" class="project">
+      <span><strong class="project-name">{{ project.gsx$name.$t }}</strong><br/>{{ project.gsx$client.$t }}</span>
+      <img [src]="project.gsx$image.$t" />
+    </a>
   </drag-scroll>
 </div>
 <div class="section thoughts">
@@ -57,9 +50,9 @@
     <h3 class="underline">Partners</h3>
   </div>
   <drag-scroll class="carousel">
-    <img src="../assets/logos/virgin.svg" alt="Virgin" />
-    <img src="../assets/logos/google.svg" alt="Google" />
-    <img src="../assets/logos/apple.svg" alt="Apple" />
+    <img src="../assets/brands/virgin.svg" alt="Virgin" />
+    <img src="../assets/brands/google.svg" alt="Google" />
+    <img src="../assets/brands/apple.svg" alt="Apple" />
   </drag-scroll>
 </div>
 <div class="section footer">

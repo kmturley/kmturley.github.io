@@ -47,9 +47,30 @@
     color: $white;
   }
 
+  .carousel {
+    height: 12.5rem;
+  }
+
+  .project {
+    position: relative;
+    span {
+      background-color: $white;
+      bottom: 0;
+      color: $mine-shaft;
+      left: 0;
+      padding: .5rem .75rem;
+      position: absolute;
+      z-index: 1;
+    }
+    .project-name {
+      font-size: 1.1em;
+      line-height: 1.5em;
+    }
+  }
+
   img {
-    height: 15rem;
-    margin-right: 1rem;
+    display: block;
+    height: 10rem;
     transition: transform .1s ease-out;
     &:hover {
       transform: scale(1.1);
@@ -63,9 +84,7 @@
     background-color: $white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, .15);
     color: $mine-shaft;
-    display: inline-block;
     line-height: 1.5em;
-    margin: 0 1rem 1rem 0;
     max-width: 15rem;
     padding: 1rem;
     text-decoration: none;
