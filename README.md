@@ -1,27 +1,73 @@
-# Portfolio
+# angular-google-sheets
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+Example project using:
 
-## Development server
+* Angular 6.x
+* Google Client API
+* SCSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install dependencies using:
 
-## Build
+    npm install
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Create an file at src/environments/environment.ts containing your google API details:
 
-## Running unit tests
+    export const environment = {
+        API_URL: 'https://sheets.googleapis.com/v4/spreadsheets/',
+        CLIENT_ID: 'X.apps.googleusercontent.com',
+        SCOPE: 'https://www.googleapis.com/auth/spreadsheets.readonly',
+        SHEET_ID: 'X',
+        TOKEN: 'X',
+        production: false,
+    };
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Create a Google spreadsheet with named columns. You can duplicate my template here:
 
-## Running end-to-end tests
+    https://docs.google.com/spreadsheets/d/1PGFoY15Wi0RFxjycqF_oXYKdjH8IM5k3_IxJLFI90aU/edit#gid=0
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run the server:
+
+    npm start
+
+View the frontend at:
+
+    http://localhost:4200/
+
+
+## Deployment
+
+In Chrome Dev tools, copy your Authorization Header Token from a request to your environment.prod.ts
+
+Then run the command to build static:
+
+    cd frontend
+    npm install
+    npm run build:prerender
+
+Or to build with custom base url:
+
+    ng build --prod --base-href https://kimturley.co.uk/angular-google-sheets/dist/browser/
+    ng run angular-google-sheets:server:production
+    npm run compile:server && npm run generate:prerender
+
+To view the statically generated version locally use:
+
+    npm run serve:prerender
+
+
+## Directory structure
+
+    /                               --> Frontend sources files
+    /static.paths.ts                --> Static generation for Google Client API
+    /app/app-routing.server.ts      --> Angular routing for Google Client API
+
+
+## Contact
+
+For more information please contact kmturley

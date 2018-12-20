@@ -1,0 +1,178 @@
+@import '../../colors';
+
+.header {
+  background: $blue-bayoux;
+  background: -moz-linear-gradient(-45deg, $blue-bayoux 0%, $mulled-wine 100%);
+  background: -webkit-linear-gradient(-45deg, $blue-bayoux 0%,$mulled-wine 100%);
+  background: linear-gradient(135deg, $blue-bayoux 0%,$mulled-wine 100%);
+  color: $white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue-bayoux', endColorstr='$mulled-wine', GradientType=1);
+
+  .logo {
+    background-color: $pavlova;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 1.5em 0;
+    padding: .2rem .4rem;
+    text-transform: uppercase;
+  }
+}
+
+.services {
+
+  .service-list {
+    margin-top: 2rem;
+  }
+
+  .service {
+    align-items: center;
+    border-bottom: .15rem solid $pavlova;
+    display: flex;
+    margin-top: .8rem;
+
+    img {
+      align-self: flex-start;
+      margin: 0 1.5rem .5rem 0;
+    }
+    p {
+      margin: 0 0 .5rem 0;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+@media (min-width: 64rem) {
+  .service-list {
+    align-items: flex-start;
+    display: flex;
+    .service {
+      border-bottom: none;
+      border-right: .15rem solid $pavlova;
+      padding-right: 1rem;
+      margin-right: 1.5rem;
+      &:last-child {
+        border: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+.projects {
+  background-color: $mine-shaft;
+
+  .section-inner {
+    padding-bottom: 0;
+  }
+
+  h3 {
+    color: $white;
+  }
+
+  .carousel {
+    height: 14rem;
+  }
+
+  .project {
+    position: relative;
+    transition: transform .1s ease-out;
+    z-index: 1;
+    span {
+      background-color: $white;
+      bottom: 0;
+      color: $mine-shaft;
+      left: 0;
+      padding: .5rem .75rem;
+      position: absolute;
+      z-index: 1;
+    }
+    .project-name {
+      font-size: 1.1em;
+      line-height: 1.5em;
+    }
+    &:hover {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+  }
+
+  img {
+    display: block;
+    height: 10rem;
+  }
+}
+
+.articles {
+  background-color: $gallery;
+
+  .section-inner {
+    padding-bottom: 0;
+  }
+
+  .carousel {
+    height: 9rem;
+  }
+
+  .article {
+    background-color: $white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, .15);
+    color: $mine-shaft;
+    line-height: 1.5em;
+    max-width: 15rem;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition: transform .1s ease-out;
+    vertical-align: top;
+    white-space: normal;
+    z-index: 1;
+    
+    &:hover {
+      transform: scale(1.1);
+      z-index: 2;
+    }
+  }
+
+  .link {
+    bottom: .75rem;
+    position: absolute;
+    right: .75rem;
+    z-index: 1;
+  }
+}
+
+.brands {
+  background-color: $mine-shaft;
+
+  .section-inner {
+    padding-bottom: 0;
+  }
+
+  h3 {
+    color: $white;
+  }
+
+  .carousel {
+    height: 9rem;
+  }
+
+  .brand {
+    margin-right: 3rem;
+    height: 4rem;
+    max-width: 6rem;
+  }
+}
+
+.footer {
+  background-color: $river-bed;
+  color: $white;
+  a {
+    color: $white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

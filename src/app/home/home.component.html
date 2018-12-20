@@ -1,0 +1,63 @@
+<div class="section header">
+  <div class="section-inner">
+    <div class="logo">Kim Turley</div>
+    <h1>Digital Strategist, Creative Thinker &amp; Technologist</h1>
+    <p>Delivering cutting-edge digital experiences in partnership with top brands since 2006.</p>
+  </div>
+</div>
+<div class="section services">
+  <div class="section-inner">
+    <h3 class="underline">Services</h3>
+    <div class="service-list">
+      <div class="service">
+        <img src="../assets/lightbulb.svg" alt="Lightbulb" />
+        <p>Uncovering unmet market needs and inventing products &amp; services with impact.</p>
+      </div>
+      <div class="service">
+        <img src="../assets/route.svg" alt="Route" />
+        <p>Transforming teams &amp; processes to cope with our ever-changing world.</p>
+      </div>
+      <div class="service">
+        <img src="../assets/products.svg" alt="products" />
+        <p>Designing and building secure, scalable digital products &amp; services quickly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section projects">
+  <div class="section-inner">
+    <h3 class="underline">Projects</h3>
+  </div>
+  <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
+    <a href="#" drag-scroll-item *ngFor="let project of projects" class="project">
+      <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
+      <img [src]="project.image" alt="{{ project.name }}" />
+    </a>
+  </drag-scroll>
+</div>
+<div class="section articles">
+  <div class="section-inner">
+    <h3 class="underline">Articles</h3>
+  </div>
+  <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
+    <a *ngFor="let article of articles" drag-scroll-item [href]="article.url" class="article" target="_blank">
+      {{ article.name }}
+      <img src="../assets/link.svg" alt="open" class="link" />
+    </a>
+  </drag-scroll>
+</div>
+<div class="section brands">
+  <div class="section-inner">
+    <h3 class="underline">Brands</h3>
+  </div>
+  <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
+    <a href="#" drag-scroll-item *ngFor="let brand of brands">
+      <img class="brand" [src]="brand.image" alt="{{ brand.name }}" />
+    </a>
+  </drag-scroll>
+</div>
+<div class="section footer">
+  <div class="section-inner">
+    <p>Get in touch <br/><a href="mailto:hello@kimturley.co.uk">hello@kimturley.co.uk</a></p>
+  </div>
+</div>
