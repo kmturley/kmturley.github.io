@@ -33,6 +33,23 @@
             "scripts": []
           },
           "configurations": {
+            "dev": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "optimization": true,
               "outputHashing": "all",
@@ -58,6 +75,9 @@
             "browserTarget": "angular-google-sheets:build"
           },
           "configurations": {
+            "dev": {
+              "browserTarget": "angular-google-sheets:build:dev"
+            },
             "production": {
               "browserTarget": "angular-google-sheets:build:production"
             }
@@ -113,6 +133,14 @@
             "tsConfig": "src/tsconfig.server.json"
           },
           "configurations": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
