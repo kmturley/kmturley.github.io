@@ -3,7 +3,7 @@ import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-bro
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { DragScrollModule } from 'ngx-drag-scroll';
+// import { DragScrollModule } from 'ngx-drag-scroll';
 
 import { ApiService } from './shared/api.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +26,7 @@ export function init(routeService: AppRoutingService) {
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     BrowserTransferStateModule,
-    DragScrollModule,
+    // DragScrollModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -35,7 +35,7 @@ export function init(routeService: AppRoutingService) {
     SharedModule
   ],
   exports: [
-    DragScrollModule
+    // DragScrollModule
   ],
   providers: [
     {

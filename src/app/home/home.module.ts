@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { DragScrollModule } from 'ngx-drag-scroll';
+// import { DragScrollModule } from 'ngx-drag-scroll';
 
 import { HomeComponent } from './home.component';
 import { SharedModule } from '../shared/shared.module';
@@ -10,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,
-    DragScrollModule,
+    // DragScrollModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild([
