@@ -12,7 +12,7 @@ export class AuthService implements HttpInterceptor {
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let auth = environment.TOKEN;
+    let auth = environment.token;
     if (isPlatformBrowser(this.platformId)) {
       auth = localStorage.getItem('token');
     }

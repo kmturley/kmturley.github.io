@@ -66,7 +66,7 @@ export class PageComponent implements OnInit {
         this.page = pages.filter((page: Page) => {
           return page.name === data.name;
         })[0];
-        console.log('PageComponent', data.name, this.page);
+        // console.log('PageComponent', data.name, this.page);
         this.title.setTitle(this.page['name']);
         this.meta.updateTag({ name: 'description', content: this.page['name'] });
       });

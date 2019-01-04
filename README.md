@@ -1,6 +1,6 @@
-# angular-google-sheets
+# kmturley.github.io
 
-Example project using:
+Portfolio project using:
 
 * Angular 6.x
 * Google Client API
@@ -20,7 +20,6 @@ Create an file at src/environments/environment.ts containing your google API det
         CLIENT_ID: 'X.apps.googleusercontent.com',
         SCOPE: 'https://www.googleapis.com/auth/spreadsheets.readonly',
         SHEET_ID: 'X',
-        TOKEN: 'X',
         production: false,
     };
 
@@ -42,12 +41,11 @@ View the frontend at:
 
 ## Deployment
 
-In Chrome Dev tools, copy your Authorization Header Token from a request to your environment.prod.ts
+In Chrome Dev tools, copy your Authorization Header Token from a Google Sheets request, and use as your NG_TOKEN in the next step.
 
 Then run the command to build static:
 
-    cd frontend
-    npm install
+    NG_TOKEN="X" npm install
     npm run build:prerender
 
 Or to build with custom base url:
