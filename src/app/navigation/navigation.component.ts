@@ -28,7 +28,7 @@ export class NavigationComponent implements OnInit {
       .pipe(map((event: RoutesRecognized) => {
         return event.state.root.firstChild.data;
       }));
-    console.log('routes', routerConfig);
+    // console.log('routes', routerConfig);
     this.router.resetConfig(routerConfig);
   }
 
