@@ -171,11 +171,19 @@
 
 .awards {
   .carousel {
-    height: 9rem;
+    height: 8rem;
   }
   .award {
+    color: $dusty-gray;
+    font-size: .8rem;
+    margin-top: 0;
+    text-decoration: none;
     vertical-align: middle;
+    span {
+      display: block;
+    }
     img {
+      filter: grayscale(50%);
       max-height: 4rem;
       margin-right: 3rem;
       max-width: 6rem;

@@ -56,6 +56,16 @@ p {
   }
 }
 
+@media (min-width: 84rem) {
+  .carousel {
+    .carousel-item {
+      &:first-child {
+        margin-left: calc((100% - 80rem) / 2);
+      }
+    }
+  }
+}
+
 // .carousel {
 //   width: 100%;
 //   .drag-scroll-content {

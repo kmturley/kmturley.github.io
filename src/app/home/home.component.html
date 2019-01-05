@@ -79,8 +79,8 @@
   </div>
   <div class="carousel">
     <a [href]="award.url" class="carousel-item award" *ngFor="let award of awards" target="_blank">
-      <span>{{ award.year }}</span>
       <img [src]="award.image" alt="{{ award.name }}" />
+      <span>{{ award.year }}</span>
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">

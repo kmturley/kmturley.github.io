@@ -2,7 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { SlugifyPipe } from './slugify.pipe';
 
 @NgModule({
-  imports: [ ],
+  imports: [],
   declarations: [
     SlugifyPipe
   ],
