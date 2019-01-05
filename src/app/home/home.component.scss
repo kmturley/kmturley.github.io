@@ -162,8 +162,22 @@
 
   .brand {
     img {
-      margin-right: 3rem;
       height: 4rem;
+      margin-right: 3rem;
+      max-width: 6rem;
+    }
+  }
+}
+
+.awards {
+  .carousel {
+    height: 9rem;
+  }
+  .award {
+    vertical-align: middle;
+    img {
+      max-height: 4rem;
+      margin-right: 3rem;
       max-width: 6rem;
     }
   }

@@ -16,6 +16,7 @@ import { Page } from '../page/page.component';
 })
 export class HomeComponent implements OnInit {
   articles: Array<object>;
+  awards: Array<object>;
   brands: Array<object>;
   projects: Array<object>;
 
@@ -27,6 +28,10 @@ export class HomeComponent implements OnInit {
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'articles').subscribe(items => {
       this.articles = items;
       console.log('articles', this.articles);
+    });
+    this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'awards').subscribe(items => {
+      this.awards = items;
+      console.log('awards', this.awards);
     });
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'brands').subscribe(items => {
       this.brands = items;
