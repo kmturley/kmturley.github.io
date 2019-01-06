@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log('HomeComponent');
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'articles').subscribe(items => {
       this.articles = items;
       // console.log('articles', this.articles);

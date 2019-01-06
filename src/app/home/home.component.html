@@ -36,13 +36,13 @@
   <div class="carousel">
     <a href="#" class="carousel-item project" *ngFor="let project of projects" [title]="project.description">
       <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
-      <img [src]="project.image" alt="{{ project.name }}" />
+      <img [src]="project.images[0]" alt="{{ project.name }}" />
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
     <a href="#" drag-scroll-item *ngFor="let project of projects" class="project">
       <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
-      <img [src]="project.image" alt="{{ project.name }}" />
+      <img [src]="project.images[0]" alt="{{ project.name }}" />
     </a>
   </drag-scroll> -->
 </div>
@@ -51,13 +51,13 @@
     <h3 class="underline">Articles</h3>
   </div>
   <div class="carousel">
-    <a *ngFor="let article of articles" class="carousel-item article" [href]="article.url" target="_blank" [title]="article.name">
+    <a *ngFor="let article of articles" class="carousel-item article" [href]="article.url" target="_blank" rel="noopener" [title]="article.name">
       {{ article.name }}
       <img src="../assets/link.svg" alt="open" class="link" />
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
-    <a *ngFor="let article of articles" drag-scroll-item [href]="article.url" class="article" target="_blank">
+    <a *ngFor="let article of articles" drag-scroll-item [href]="article.url" class="article" target="_blank" rel="noopener">
       {{ article.name }}
       <img src="../assets/link.svg" alt="open" class="link" />
     </a>
@@ -68,13 +68,13 @@
     <h3 class="underline">Partners</h3>
   </div>
   <div class="carousel">
-    <a [href]="brand.url" class="carousel-item brand" *ngFor="let brand of brands" target="_blank" [title]="brand.name">
-      <img [src]="brand.image" alt="{{ brand.name }}" />
+    <a [href]="brand.url" class="carousel-item brand" *ngFor="let brand of brands" target="_blank" rel="noopener" [title]="brand.name">
+      <img [src]="brand.images[0]" alt="{{ brand.name }}" />
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
     <a href="#" drag-scroll-item *ngFor="let brand of brands">
-      <img class="brand" [src]="brand.image" alt="{{ brand.name }}" />
+      <img class="brand" [src]="brand.images[0]" alt="{{ brand.name }}" />
     </a>
   </drag-scroll> -->
 </div>
@@ -83,14 +83,14 @@
     <h3 class="underline">Awards</h3>
   </div>
   <div class="carousel">
-    <a [href]="award.url" class="carousel-item award" *ngFor="let award of awards" target="_blank" [title]="award.description">
-      <img [src]="award.image" alt="{{ award.name }}" />
+    <a [href]="award.url" class="carousel-item award" *ngFor="let award of awards" target="_blank" rel="noopener" [title]="award.description">
+      <img [src]="award.images[0]" alt="{{ award.name }}" />
       <span>{{ award.year }}</span>
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
     <a href="#" drag-scroll-item *ngFor="let award of awards">
-      <img class="award" [src]="award.image" alt="{{ award.name }}" />
+      <img class="award" [src]="award.images[0]" alt="{{ award.name }}" />
     </a>
   </drag-scroll> -->
 </div>

@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 
 export function init(routeService: AppRoutingService) {
+  console.log('init');
   return () => routeService.getRoutes();
 }
 

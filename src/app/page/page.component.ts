@@ -6,41 +6,29 @@ import { environment } from '../../environments/environment';
 import { ApiService } from '../shared/api.service';
 
 export class Page {
-  activities?: Array<string>;
-  approach?: string;
-  contacts?: Array<string>;
-  goals?: string;
+  client?: string;
+  description?: string;
   images?: Array<string>;
-  industries?: Array<string>;
-  locations?: Array<string>;
   name?: string;
-  results?: string;
+  services?: Array<string>;
   technologies?: Array<string>;
   years?: Array<string>;
 
   constructor(data: {
-    name?: string,
-    goals?: string,
-    approach?: string,
-    results?: string,
+    client?: string,
+    description?: string,
     images?: Array<string>,
-    locations?: Array<string>,
-    industries?: Array<string>,
-    activities?: Array<string>,
+    name?: string,
+    services?: Array<string>,
     technologies?: Array<string>,
-    contacts?: Array<string>,
     years?: Array<string>,
   }) {
-    if (data.name) { this.name = data.name; }
-    if (data.goals) { this.goals = data.goals; }
-    if (data.approach) { this.approach = data.approach; }
-    if (data.results) { this.results = data.results; }
+    if (data.client) { this.client = data.client; }
+    if (data.description) { this.description = data.description; }
     if (data.images) { this.images = data.images; }
-    if (data.locations) { this.locations = data.locations; }
-    if (data.industries) { this.industries = data.industries; }
-    if (data.activities) { this.activities = data.activities; }
+    if (data.name) { this.name = data.name; }
+    if (data.services) { this.services = data.services; }
     if (data.technologies) { this.technologies = data.technologies; }
-    if (data.contacts) { this.contacts = data.contacts; }
     if (data.years) { this.years = data.years; }
   }
 }
@@ -61,6 +49,7 @@ export class PageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    console.log('PageComponent');
     this.route.data.subscribe((data) => {
       this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(pages => {
         this.page = pages.filter((page: Page) => {

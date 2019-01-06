@@ -11,6 +11,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class ApiService {
+  data = {};
 
   constructor(
     private http: HttpClient,
@@ -19,9 +20,14 @@ export class ApiService {
   ) { }
 
   get(url, id): Observable<any> {
+    console.log('api.get', url, id);
     const key = makeStateKey(id);
-    if (this.transferState.hasKey(key)) {
+    if (this.data[id]) {
+      console.log('api.get.data');
+      return of(this.data[id]);
+    } else if (this.transferState.hasKey(key)) {
       const item = this.transferState.get(key, null);
+      console.log('api.get.transferState');
       return of(item);
     } else {
       if (environment.production && isPlatformBrowser(this.platformId)) {
@@ -32,6 +38,7 @@ export class ApiService {
           let items;
           if (environment.production && isPlatformBrowser(this.platformId)) {
             items = data;
+            this.data[key] = items;
             this.transferState.set(key, items);
           } else {
             items = [];
@@ -57,6 +64,7 @@ export class ApiService {
                     }
                   }
                 });
+                this.data[sheet['properties']['title']] = rowItems;
                 this.transferState.set(sheet['properties']['title'], rowItems);
                 if (sheet['properties']['title'] === id) {
                   items = rowItems;
@@ -64,8 +72,10 @@ export class ApiService {
               });
             } else {
               items = data;
+              this.data[key] = items;
               this.transferState.set(key, items);
             }
+            console.log('api.get.http');
             return items;
           }
         })
