@@ -25,12 +25,13 @@ let previousRender = Promise.resolve();
 
 
 getPaths().then((ROUTES: any[]) => {
-  console.log('ROUTES', ROUTES);
+  // console.log('ROUTES', ROUTES);
 
   // create json folder
-  const jsonPath = join(BROWSER_FOLDER, 'json');
-  if (!existsSync(jsonPath)) {
-    mkdirSync(jsonPath);
+  const jsonFolder = join(BROWSER_FOLDER, 'json');
+  if (!existsSync(jsonFolder)) {
+    console.log('+', '/json');
+    mkdirSync(jsonFolder);
   }
 
   // Iterate each route path
@@ -39,6 +40,7 @@ getPaths().then((ROUTES: any[]) => {
 
     // Make sure the directory structure is there
     if (!existsSync(fullPath)) {
+      console.log('+', `/${route}`);
       mkdirSync(fullPath);
     }
 
@@ -51,15 +53,21 @@ getPaths().then((ROUTES: any[]) => {
       ]
     })).then((res: { output: string, data: object }) => {
       // write html file
-      console.log('WRITE HTML FILE', join(route, 'index.html'));
-      writeFileSync(join(fullPath, 'index.html'), res.output);
+      const pathHtml = join(fullPath, 'index.html');
+      if (existsSync(pathHtml)) {
+        console.log('+', `${route}index.html`);
+        writeFileSync(pathHtml, res.output);
+      }
 
       // write json files from TransferState objects
       Object.keys(res.data).forEach(item => {
         // console.log('WRITE JSON FILE', join('json', item + '.json'));
-        // writeFileSync(join(jsonPath, item + 'routes.json'), JSON.stringify(res.data[item]));
-        console.log('WRITE JSON FILE', join('json', 'routes.json'));
-        writeFileSync(join(jsonPath, 'routes.json'), JSON.stringify(res.data[item]));
+        // writeFileSync(join(jsonFolder, item + 'routes.json'), JSON.stringify(res.data[item]));
+        const pathJson = join(jsonFolder, `${item}.json`);
+        if (existsSync(pathJson)) {
+          console.log('+', `/json/${item}.json`);
+          writeFileSync(pathJson, JSON.stringify(res.data[item]));
+        }
       });
     });
   });

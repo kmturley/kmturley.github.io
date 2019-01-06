@@ -32,38 +32,42 @@ export class ApiService {
           let items;
           if (environment.production && isPlatformBrowser(this.platformId)) {
             items = data;
+            this.transferState.set(key, items);
           } else {
             items = [];
             if (data['sheets']) {
               data['sheets'].forEach((sheet, sheetIndex) => {
+                const rowItems = [];
                 const rows = sheet['data'][0]['rowData'];
-                if (sheet['properties']['title'] === id) {
-                  rows.forEach((row, index) => {
-                    if (index > 0) {
-                      const newRow = {};
-                      row['values'].forEach((rowItem, rowIndex) => {
-                        const rowKey = rows[0]['values'][rowIndex].formattedValue;
-                        let rowValue = rowItem.formattedValue;
-                        if (rowKey && rowValue) {
-                          if (rowKey.charAt(rowKey.length - 1) === 's') {
-                            rowValue = rowItem.formattedValue.split('\n');
-                          }
-                          newRow[rowKey] = rowValue;
+                rows.forEach((row, index) => {
+                  if (index > 0) {
+                    const newRow = {};
+                    row['values'].forEach((rowItem, rowIndex) => {
+                      const rowKey = rows[0]['values'][rowIndex].formattedValue;
+                      let rowValue = rowItem.formattedValue;
+                      if (rowKey && rowValue) {
+                        if (rowKey.charAt(rowKey.length - 1) === 's') {
+                          rowValue = rowItem.formattedValue.split('\n');
                         }
-                      });
-                      if (newRow['name']) {
-                        items.push(newRow);
+                        newRow[rowKey] = rowValue;
                       }
+                    });
+                    if (newRow['name']) {
+                      rowItems.push(newRow);
                     }
-                  });
+                  }
+                });
+                this.transferState.set(sheet['properties']['title'], rowItems);
+                if (sheet['properties']['title'] === id) {
+                  items = rowItems;
                 }
               });
             } else {
               items = data;
+              this.transferState.set(key, items);
             }
+            return items;
           }
-          this.transferState.set(key, items);
-          return items;
         })
       );
     }

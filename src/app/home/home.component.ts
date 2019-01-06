@@ -27,19 +27,19 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'articles').subscribe(items => {
       this.articles = items;
-      console.log('articles', this.articles);
+      // console.log('articles', this.articles);
     });
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'awards').subscribe(items => {
       this.awards = items;
-      console.log('awards', this.awards);
+      // console.log('awards', this.awards);
     });
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'brands').subscribe(items => {
       this.brands = items;
-      console.log('brands', this.brands);
+      // console.log('brands', this.brands);
     });
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(items => {
       this.projects = items;
-      console.log('projects', this.projects);
+      // console.log('projects', this.projects);
     });
   }
 }
