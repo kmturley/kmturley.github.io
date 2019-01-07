@@ -1,8 +1,8 @@
 {
   "name": "Kim Turley",
   "short_name": "Kim T",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#4e6374",
+  "background_color": "#4e6374",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
