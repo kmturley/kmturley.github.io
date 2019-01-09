@@ -21,6 +21,7 @@ export class LazyLoadImageDirective implements OnInit {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.setAttribute('src', this.srcLazy);
+              entry.target.classList.add('lazy-loaded');
               lazyImageObserver.unobserve(entry.target);
             }
           });
