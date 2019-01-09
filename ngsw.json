@@ -7,13 +7,13 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/4.b6bf68729724c90a7769.js",
-        "/5.5d409e9185dd27d95e98.js",
+        "/4.da2b108af4d2e7431832.js",
+        "/5.6bb2be6750dd60d3f766.js",
         "/favicon.ico",
         "/index.html",
-        "/main.ef04e49011538b3febb6.js",
+        "/main.30c919e8f0e0cc02f65f.js",
         "/polyfills.1ae4583ea69c008f7ab0.js",
-        "/runtime.ad17ac8e94904aa79a25.js",
+        "/runtime.87fec4afdbb63270605a.js",
         "/styles.17ed749c92ee50e8fc56.css"
       ],
       "patterns": []
@@ -90,6 +90,7 @@
         "/assets/projects/novartis-hackathon.jpg",
         "/assets/projects/novartis-together-in-hf.jpg",
         "/assets/projects/ny-academy-of-sciences-launchpad.jpg",
+        "/assets/projects/placeholder.jpg",
         "/assets/projects/sainsburys-living-archive.jpg",
         "/assets/projects/santander-british-grand-prix.jpg",
         "/assets/projects/the-times-news-app.jpg",
@@ -107,8 +108,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/4.b6bf68729724c90a7769.js": "c1b907722fb00cdb6a7540d11db42ce286831864",
-    "/5.5d409e9185dd27d95e98.js": "c20bcf31e29d1e2d18e9e1e4b6e538ebc6c67b6f",
+    "/4.da2b108af4d2e7431832.js": "ddbbb6139ac1ed66eb5b921662882e392fa33d5e",
+    "/5.6bb2be6750dd60d3f766.js": "d3a0eb9afbd255681bbfd78ddb2dd1178b4ac4a3",
     "/assets/awards/dadi-awards.png": "6585ac9f0a0dff0ea0dd73783d76ca13b74440a5",
     "/assets/awards/davey-awards.png": "c37c229e9bc76ff97b49cae4d8cee67e3a06b925",
     "/assets/awards/design-week-top-100.png": "a33f716fab4c6f873f3c367392d8e127220d6b66",
@@ -176,6 +177,7 @@
     "/assets/projects/novartis-hackathon.jpg": "4a67fee96c381bc0a4de8c126d21856a596229e3",
     "/assets/projects/novartis-together-in-hf.jpg": "4fb4af50638d6079c748af50d99f2fa933f434a0",
     "/assets/projects/ny-academy-of-sciences-launchpad.jpg": "acd63ece652c83fbfa052e4f41e44edd03671d95",
+    "/assets/projects/placeholder.jpg": "acd5274d974622266be5d78426bfc9c1c25832db",
     "/assets/projects/sainsburys-living-archive.jpg": "61aedf48835ccc0c32c1760869a9b11f64d1938c",
     "/assets/projects/santander-british-grand-prix.jpg": "fa0709bc412b437fdf35ef08046c5509f6fd5046",
     "/assets/projects/the-times-news-app.jpg": "2d4a1f471c9263f7e63702b761c3a793e476a436",
@@ -188,10 +190,10 @@
     "/assets/projects/youtube-interactive-channels.jpg": "e0fe2d5aa777395879939b72b533052f9997ac70",
     "/assets/route.svg": "b01a11aeefde637536d31193159d3da3f0cdeb33",
     "/favicon.ico": "b591f9fe2ed285c762616e9a0e33ee0678700566",
-    "/index.html": "409789b983c44f4ce124d803200fa229452c0efd",
-    "/main.ef04e49011538b3febb6.js": "00d9c30f3f4083039477458b4585d2ff0b32395e",
+    "/index.html": "75f61884a0d978bbd59f6fb0b0879a0f152c8cea",
+    "/main.30c919e8f0e0cc02f65f.js": "569804e63899625ec50262c0fa1e0bfc42e7ef0e",
     "/polyfills.1ae4583ea69c008f7ab0.js": "687a4b38dfb6b6f5e426b3128d4fc5e1cbb05784",
-    "/runtime.ad17ac8e94904aa79a25.js": "1b9e593b8528e6e6283af643c3117041f09f761d",
+    "/runtime.87fec4afdbb63270605a.js": "9e610e4676dc40a3c7de7c1083a55ff9dbb7fa9b",
     "/styles.17ed749c92ee50e8fc56.css": "e6c4eac7c5c78c47b82a2b340b260dc5a73c7939"
   },
   "navigationUrls": [
