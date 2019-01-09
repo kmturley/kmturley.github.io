@@ -3,7 +3,6 @@ import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-bro
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TransferHttpCacheModule } from '@nguniversal/common';
-import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-image';
 // import { DragScrollModule } from 'ngx-drag-scroll';
 
 import { ApiService } from './shared/api.service';
@@ -33,9 +32,6 @@ export function init(routeService: AppRoutingService) {
     // DragScrollModule,
     FormsModule,
     HttpClientModule,
-    LazyLoadImageModule.forRoot({
-      preset: intersectionObserverPreset
-    }),
     ReactiveFormsModule,
     TransferHttpCacheModule,
     AppRoutingModule,

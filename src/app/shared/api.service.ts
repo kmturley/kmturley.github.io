@@ -19,68 +19,69 @@ export class ApiService {
     private transferState: TransferState
   ) { }
 
-  get(url, id): Observable<any> {
+  get(url: string, id: string): Observable<any> {
     console.log('api.get', url, id);
     const key = makeStateKey(id);
-    if (this.data[id]) {
+    if (this.data[id] && isPlatformBrowser(this.platformId)) {
       console.log('api.get.data');
       return of(this.data[id]);
     } else if (this.transferState.hasKey(key)) {
-      const item = this.transferState.get(key, null);
       console.log('api.get.transferState');
+      const item = this.transferState.get(key, null);
       return of(item);
     } else {
+      console.log('api.get.http');
       if (environment.production && isPlatformBrowser(this.platformId)) {
         url = `./json/${id}.json`;
       }
       return this.http.get(url).pipe(
-        map(data => {
-          let items;
-          if (environment.production && isPlatformBrowser(this.platformId)) {
-            items = data;
-            this.data[key] = items;
-            this.transferState.set(key, items);
+        map(items => {
+          if (items['sheets']) {
+            const sheetItems = this.convertSheets(items['sheets']);
+            Object.keys(sheetItems).forEach((sheetId) => {
+              const sheetKey = makeStateKey(sheetId);
+              this.data[sheetId] = sheetItems[sheetId];
+              this.transferState.set(sheetKey, sheetItems[sheetId]);
+              if (sheetId === id) {
+                items = sheetItems[sheetId];
+              }
+            });
           } else {
-            items = [];
-            if (data['sheets']) {
-              data['sheets'].forEach((sheet, sheetIndex) => {
-                const rowItems = [];
-                const rows = sheet['data'][0]['rowData'];
-                rows.forEach((row, index) => {
-                  if (index > 0) {
-                    const newRow = {};
-                    row['values'].forEach((rowItem, rowIndex) => {
-                      const rowKey = rows[0]['values'][rowIndex].formattedValue;
-                      let rowValue = rowItem.formattedValue;
-                      if (rowKey && rowValue) {
-                        if (rowKey.charAt(rowKey.length - 1) === 's') {
-                          rowValue = rowItem.formattedValue.split('\n');
-                        }
-                        newRow[rowKey] = rowValue;
-                      }
-                    });
-                    if (newRow['name']) {
-                      rowItems.push(newRow);
-                    }
-                  }
-                });
-                this.data[sheet['properties']['title']] = rowItems;
-                this.transferState.set(sheet['properties']['title'], rowItems);
-                if (sheet['properties']['title'] === id) {
-                  items = rowItems;
-                }
-              });
-            } else {
-              items = data;
-              this.data[key] = items;
-              this.transferState.set(key, items);
-            }
-            console.log('api.get.http');
-            return items;
+            this.data[id] = items;
+            this.transferState.set(key, items);
           }
+          return items;
         })
       );
     }
+  }
+
+  convertSheets(sheets: Array<object>) {
+    const sheetList = {};
+    sheets.forEach((sheet) => {
+      const rowItems = [];
+      const rows = sheet['data'][0]['rowData'];
+      rows.forEach((row, index) => {
+        if (index > 0) {
+          const newRow = {};
+          row['values'].forEach((rowItem, rowIndex) => {
+            const rowKey = rows[0]['values'][rowIndex].formattedValue;
+            let rowValue = rowItem.formattedValue;
+            if (rowKey && rowValue) {
+              if (rowKey.charAt(rowKey.length - 1) === 's') {
+                rowValue = rowItem.formattedValue.split('\n');
+              }
+              newRow[rowKey] = rowValue;
+            }
+          });
+          if (newRow['name']) {
+            rowItems.push(newRow);
+          }
+        }
+      });
+      sheetList[sheet['properties']['title']] = rowItems;
+    });
+    return sheetList;
   }
 
   post(url, data, id): Observable<any> {

@@ -15,15 +15,15 @@
     <h3 class="underline">Skills</h3>
     <div class="service-list">
       <div class="service">
-        <img [defaultImage]="'../assets/projects/placeholder.jpg'" [lazyLoad]="'../assets/lightbulb.svg'" alt="Lightbulb" />
+        <img src="../assets/projects/placeholder.jpg" srcLazy="../assets/lightbulb.svg" alt="Lightbulb" appLazyLoadImage />
         <p>Uncovering unmet market needs and inventing products &amp; services with impact.</p>
       </div>
       <div class="service">
-          <img [defaultImage]="'../assets/projects/placeholder.jpg'" [lazyLoad]="'../assets/route.svg'" alt="Route" />
+        <img src="../assets/projects/placeholder.jpg" srcLazy="../assets/route.svg" alt="Route" appLazyLoadImage />
         <p>Transforming teams &amp; processes to cope with our ever-changing world.</p>
       </div>
       <div class="service">
-        <img [defaultImage]="'../assets/projects/placeholder.jpg'" [lazyLoad]="'../assets/products.svg'" alt="Products" />
+        <img src="../assets/projects/placeholder.jpg" srcLazy="../assets/products.svg" alt="Products" appLazyLoadImage />
         <p>Designing and building secure, scalable digital products &amp; services quickly.</p>
       </div>
     </div>
@@ -36,7 +36,7 @@
   <div class="carousel">
     <a [routerLink]="project.name | slugify" class="carousel-item project" *ngFor="let project of projects" [title]="project.description">
       <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
-      <img [defaultImage]="'../assets/projects/placeholder.jpg'" [lazyLoad]="project.images[0]" [alt]="project.name" />
+      <img src="../assets/projects/placeholder.jpg" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage />
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
@@ -69,7 +69,7 @@
   </div>
   <div class="carousel">
     <a [href]="brand.url" class="carousel-item brand" *ngFor="let brand of brands" target="_blank" rel="noopener" [title]="brand.name">
-      <img [defaultImage]="'../assets/projects/placeholder.jpg'" [lazyLoad]="brand.images[0]" [alt]="brand.name" />
+      <img src="../assets/projects/placeholder.jpg" [srcLazy]="brand.images[0]" [alt]="brand.name" appLazyLoadImage />
     </a>
   </div>
   <!-- <drag-scroll class="carousel" drag-scroll-y-disabled="true" scrollbar-hidden="true">
@@ -84,7 +84,7 @@
   </div>
   <div class="carousel">
     <a [href]="award.url" class="carousel-item award" *ngFor="let award of awards" target="_blank" rel="noopener" [title]="award.description">
-      <img [defaultImage]="'../assets/projects/placeholder.jpg'" [lazyLoad]="award.images[0]" [alt]="award.name" />
+      <img src="../assets/projects/placeholder.jpg" [srcLazy]="award.images[0]" [alt]="award.name" appLazyLoadImage />
       <span>{{ award.year }}</span>
     </a>
   </div>

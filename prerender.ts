@@ -25,23 +25,21 @@ let previousRender = Promise.resolve();
 
 
 getPaths().then((ROUTES: any[]) => {
-  // console.log('ROUTES', ROUTES);
-
   // create json folder
   const jsonFolder = join(BROWSER_FOLDER, 'json');
   if (!existsSync(jsonFolder)) {
-    console.log('+', '/json');
+    console.log('+', jsonFolder);
     mkdirSync(jsonFolder);
   }
 
   // Iterate each route path
   ROUTES.forEach(route => {
-    const fullPath = join(BROWSER_FOLDER, route);
+    const routeFolder = join(BROWSER_FOLDER, route);
 
     // Make sure the directory structure is there
-    if (!existsSync(fullPath)) {
-      console.log('+', `/${route}`);
-      mkdirSync(fullPath);
+    if (!existsSync(routeFolder)) {
+      console.log('+', routeFolder);
+      mkdirSync(routeFolder);
     }
 
     // Writes rendered HTML to index.html, replacing the file if it already exists.
@@ -53,20 +51,21 @@ getPaths().then((ROUTES: any[]) => {
       ]
     })).then((res: { output: string, data: object }) => {
       // write html file
-      const pathHtml = join(fullPath, 'index.html');
-      if (existsSync(pathHtml)) {
-        console.log('+', `${route}index.html`);
-        writeFileSync(pathHtml, res.output);
+      const htmlFile = join(routeFolder, 'index.html');
+      if (!existsSync(htmlFile)) {
+        console.log('+', htmlFile);
+        writeFileSync(htmlFile, res.output);
       }
 
       // write json files from TransferState objects
-      Object.keys(res.data).forEach(item => {
-        // console.log('WRITE JSON FILE', join('json', item + '.json'));
-        // writeFileSync(join(jsonFolder, item + 'routes.json'), JSON.stringify(res.data[item]));
-        const pathJson = join(jsonFolder, `${item}.json`);
-        if (existsSync(pathJson)) {
-          console.log('+', `/json/${item}.json`);
-          writeFileSync(pathJson, JSON.stringify(res.data[item]));
+      Object.keys(res.data).forEach(jsonKey => {
+        // TODO find out why original url is still returned
+        if (!jsonKey.includes('http')) {
+          const jsonFile = join(jsonFolder, `${jsonKey}.json`);
+          if (!existsSync(jsonFile)) {
+            console.log('+', jsonFile);
+            writeFileSync(jsonFile, JSON.stringify(res.data[jsonKey]));
+          }
         }
       });
     });
