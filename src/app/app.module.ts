@@ -14,7 +14,6 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 export function init(routeService: AppRoutingService) {
@@ -26,7 +25,6 @@ export function init(routeService: AppRoutingService) {
   declarations: [
     AppComponent,
     NavigationComponent,
-    HeaderComponent,
     FooterComponent
   ],
   imports: [
