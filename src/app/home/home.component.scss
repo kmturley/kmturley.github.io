@@ -1,5 +1,10 @@
 @import '../../colors';
 
+.section-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .services {
 
   .service-list {

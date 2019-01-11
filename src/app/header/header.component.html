@@ -1,7 +1,7 @@
 <div class="section header">
   <div class="section-inner">
     <a [routerLink]="'/'" class="portrait">
-      <img src="../assets/placeholder.jpg" srcLazy="../assets/kim-turley.jpg" alt="Kim Turley" appLazyLoadImage />
+      <img src="../assets/placeholder.jpg" srcLazy="../assets/kim-turley.jpg" alt="Kim Turley" appLazyLoadImage *ngIf="image" />
       <span class="logo">Kim Turley</span>
     </a>
     <div class="intro">

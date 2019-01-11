@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
+  @Input() image: boolean;
   @Input() subtitle: string;
   @Input() title: string;
 
