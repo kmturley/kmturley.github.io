@@ -7,14 +7,16 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/4.5ccbc5d1b6b6005b50c1.js",
-        "/5.6bb2be6750dd60d3f766.js",
+        "/5.d1e740f2f09310a1814f.js",
+        "/6.e2165369379b1c0dc0f3.js",
+        "/7.083c7290ee98b7f939c0.js",
+        "/common.9bc10625cade49a0a50a.js",
         "/favicon.ico",
         "/index.html",
-        "/main.5eafb87653cd79741e4a.js",
-        "/polyfills.1ae4583ea69c008f7ab0.js",
-        "/runtime.ec764063b6bbb335a380.js",
-        "/styles.17ed749c92ee50e8fc56.css"
+        "/main.cbdc6a5b629b09215376.js",
+        "/polyfills.94bbdcf020f16b185a36.js",
+        "/runtime.935b2d0d0291fc14d138.js",
+        "/styles.fbe8608bac79f233774d.css"
       ],
       "patterns": []
     },
@@ -23,6 +25,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "/assets/arrow-down.png",
         "/assets/awards/dadi-awards.png",
         "/assets/awards/davey-awards.png",
         "/assets/awards/design-week-top-100.png",
@@ -112,8 +115,10 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/4.5ccbc5d1b6b6005b50c1.js": "df4615b440e8bf6b9dc02692bcdca042e4d9be50",
-    "/5.6bb2be6750dd60d3f766.js": "d3a0eb9afbd255681bbfd78ddb2dd1178b4ac4a3",
+    "/5.d1e740f2f09310a1814f.js": "7e538eab272dcd57c001a0a68109c7b34c62472f",
+    "/6.e2165369379b1c0dc0f3.js": "814c7ccb7b6a49a49cd2c94955bfc335abd4c5ea",
+    "/7.083c7290ee98b7f939c0.js": "249c188ab87c57c86eec5188ad637fd6620fa3d4",
+    "/assets/arrow-down.png": "113e9f28d6458d425d7208dc16da208663e32041",
     "/assets/awards/dadi-awards.png": "6585ac9f0a0dff0ea0dd73783d76ca13b74440a5",
     "/assets/awards/davey-awards.png": "c37c229e9bc76ff97b49cae4d8cee67e3a06b925",
     "/assets/awards/design-week-top-100.png": "a33f716fab4c6f873f3c367392d8e127220d6b66",
@@ -197,12 +202,13 @@
     "/assets/skills/placeholder.jpg": "cb0bb0dd0cfe9da9b4c5412b468fa918c9251f60",
     "/assets/skills/products.svg": "ce617b14eeac181448433b1a7f1a78e0ce3a1d5c",
     "/assets/skills/route.svg": "b01a11aeefde637536d31193159d3da3f0cdeb33",
+    "/common.9bc10625cade49a0a50a.js": "3a31cf4e4fbb0808fe2f142500edb8ec028f3b7d",
     "/favicon.ico": "b591f9fe2ed285c762616e9a0e33ee0678700566",
-    "/index.html": "691f17d7fb58d793d2006c83ae65dca78b3ad193",
-    "/main.5eafb87653cd79741e4a.js": "5653ca58f3d1b74dec85c1d9cf9a4650fb4ba903",
-    "/polyfills.1ae4583ea69c008f7ab0.js": "687a4b38dfb6b6f5e426b3128d4fc5e1cbb05784",
-    "/runtime.ec764063b6bbb335a380.js": "a0bb4e826e99569252232dec7b4d01d62770c67c",
-    "/styles.17ed749c92ee50e8fc56.css": "e6c4eac7c5c78c47b82a2b340b260dc5a73c7939"
+    "/index.html": "e386086e85dce2606f9a1f4afdf5cf999ebef7e6",
+    "/main.cbdc6a5b629b09215376.js": "cb3acd1f237d19ca0dfc539decf46b24027401a6",
+    "/polyfills.94bbdcf020f16b185a36.js": "6132589a6c43685c1674d40fb060cb1addce9851",
+    "/runtime.935b2d0d0291fc14d138.js": "97185c8d381c6214f343f1f661f2938e7c8ab2e5",
+    "/styles.fbe8608bac79f233774d.css": "1a6517c215bb5426a0b05123a3e7e2497a8293f4"
   },
   "navigationUrls": [
     {
