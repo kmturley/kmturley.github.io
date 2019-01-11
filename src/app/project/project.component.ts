@@ -5,11 +5,12 @@ import { Meta, Title } from '@angular/platform-browser';
 import { environment } from '../../environments/environment';
 import { ApiService } from '../shared/api.service';
 
-export class Page {
+export class Project {
   client?: string;
   description?: string;
   images?: Array<string>;
   name?: string;
+  activities?: Array<string>;
   services?: Array<string>;
   technologies?: Array<string>;
   years?: Array<string>;
@@ -19,6 +20,7 @@ export class Page {
     description?: string,
     images?: Array<string>,
     name?: string,
+    activities?: Array<string>,
     services?: Array<string>,
     technologies?: Array<string>,
     years?: Array<string>,
@@ -27,6 +29,7 @@ export class Page {
     if (data.description) { this.description = data.description; }
     if (data.images) { this.images = data.images; }
     if (data.name) { this.name = data.name; }
+    if (data.activities) { this.activities = data.activities; }
     if (data.services) { this.services = data.services; }
     if (data.technologies) { this.technologies = data.technologies; }
     if (data.years) { this.years = data.years; }
@@ -34,12 +37,12 @@ export class Page {
 }
 
 @Component({
-  selector: 'app-page',
-  styleUrls: ['./page.component.scss'],
-  templateUrl: './page.component.html'
+  selector: 'app-project',
+  styleUrls: ['./project.component.scss'],
+  templateUrl: './project.component.html'
 })
-export class PageComponent implements OnInit {
-  public page: Page;
+export class ProjectComponent implements OnInit {
+  public project: Project;
 
   constructor(
     private api: ApiService,
@@ -49,15 +52,15 @@ export class PageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('PageComponent');
+    console.log('ProjectComponent');
     this.route.data.subscribe((data) => {
-      this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(pages => {
-        this.page = pages.filter((page: Page) => {
-          return page.name === data.name;
+      this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(projects => {
+        this.project = projects.filter((project: Project) => {
+          return project.name === data.name;
         })[0];
-        // console.log('PageComponent', data.name, this.page);
-        this.title.setTitle(this.page['name']);
-        this.meta.updateTag({ name: 'description', content: this.page['name'] });
+        console.log('ProjectComponent', data.name, this.project);
+        this.title.setTitle(this.project['name']);
+        this.meta.updateTag({ name: 'description', content: this.project['name'] });
       });
     });
   }

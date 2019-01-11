@@ -17,7 +17,7 @@ export class SharedModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: SharedModule,
-      providers: [LazyLoadImageDirective, SlugifyPipe]
+      providers: [ LazyLoadImageDirective, SlugifyPipe ]
     };
   }
 }

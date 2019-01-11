@@ -1,0 +1,11 @@
+@import '../../colors';
+
+.footer {
+  background-color: $river-bed;
+  color: $white;
+  a {
+    color: $white;
+    font-size: 20px;
+    text-decoration: none;
+  }
+}

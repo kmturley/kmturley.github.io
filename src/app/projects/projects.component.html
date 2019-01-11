@@ -1,0 +1,48 @@
+<div class="section">
+  <div class="section-inner">
+    <div class="filters">
+      <div class="form-input">
+        <label for="services">Services</label>
+        <select [formControl]="selectServices" (change)="onChange('services', $event.target.value)" name="services" id="services">
+          <option value="all">All</option>
+          <option *ngFor="let service of services" [value]="service | slugify">{{ service }}</option>
+        </select>
+      </div>
+      <div class="form-input">
+        <label for="activities">Activities</label>
+        <select [formControl]="selectActivities" (change)="onChange('activities', $event.target.value)" name="activities" id="activities">
+          <option value="all">All</option>
+          <option *ngFor="let activity of activities" [value]="activity | slugify">{{ activity }}</option>
+        </select>
+      </div>
+      <div class="form-input">
+        <label for="technologies">Technologies</label>
+        <select [formControl]="selectTechnologies" (change)="onChange('technologies', $event.target.value)" name="technologies" id="technologies">
+          <option value="all">All</option>
+          <option *ngFor="let technology of technologies" [value]="technology | slugify">{{ technology }}</option>
+        </select>
+      </div>
+      <div class="form-input">
+        <label for="years">Years</label>
+        <select [formControl]="selectYears" (change)="onChange('years', $event.target.value)" name="years" id="years">
+          <option value="all">All</option>
+          <option *ngFor="let year of years" [value]="year | slugify">{{ year }}</option>
+        </select>
+      </div>
+      <div class="form-input">
+        <label for="search">Search</label>
+        <input [formControl]="inputSearch" (input)="onChange('search', $event.target.value)" name="search" id="search" placeholder="All" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section projects">
+  <div class="section-inner">
+    <div class="grid">
+      <a [routerLink]="'/' + project.path" class="project" *ngFor="let project of projects" [title]="project.description">
+        <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
+        <img src="../assets/projects/placeholder.jpg" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage />
+      </a>
+    </div>
+  </div>
+</div>

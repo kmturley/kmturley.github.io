@@ -7,7 +7,6 @@ import { forkJoin } from 'rxjs';
 
 import { environment } from '../../environments/environment';
 import { ApiService } from '../shared/api.service';
-import { Page } from '../page/page.component';
 
 @Component({
   selector: 'app-home',

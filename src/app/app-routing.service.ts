@@ -49,11 +49,19 @@ export class AppRoutingService {
           name: 'Home'
         }
       });
+      this.routes.push({
+        pathMatch: 'full',
+        path: 'projects',
+        loadChildren: './projects/projects.module#ProjectsModule',
+        data: {
+          name: 'Projects'
+        }
+      });
       routes.forEach((route) => {
         this.routes.push({
           pathMatch: 'full',
-          path: this.slugifyPipe.transform(route.name),
-          loadChildren: './page/page.module#PageModule',
+          path: route.path,
+          loadChildren: './project/project.module#ProjectModule',
           data: {
             name: route.name
           }

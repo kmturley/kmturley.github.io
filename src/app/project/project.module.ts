@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { PageComponent } from './page.component';
+import { ProjectComponent } from './project.component';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -9,10 +9,10 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      { path: '', component: PageComponent, pathMatch: 'full'}
+      { path: '', component: ProjectComponent, pathMatch: 'full'}
     ]),
     SharedModule
   ],
-  declarations: [PageComponent]
+  declarations: [ProjectComponent]
 })
-export class PageModule { }
+export class ProjectModule { }

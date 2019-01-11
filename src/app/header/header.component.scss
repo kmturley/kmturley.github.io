@@ -1,0 +1,58 @@
+@import '../../colors';
+
+.header {
+  background: $blue-bayoux;
+  background: -moz-linear-gradient(-45deg, $blue-bayoux 0%, $mulled-wine 100%);
+  background: -webkit-linear-gradient(-45deg, $blue-bayoux 0%,$mulled-wine 100%);
+  background: linear-gradient(135deg, $blue-bayoux 0%,$mulled-wine 100%);
+  color: $white;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue-bayoux', endColorstr='$mulled-wine', GradientType=1);
+
+  .section-inner {
+    .intro {
+      margin: auto;
+      max-width: 28rem;
+      text-align: center;
+    }
+    .portrait {
+      margin: auto auto 1.5rem auto;
+      position: relative;
+      width: 10rem;
+      img {
+        border-radius: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .logo {
+    background-color: $pavlova;
+    bottom: 0;
+    color: $mine-shaft-2;
+    font-size: 14px;
+    font-weight: 700;
+    left: 50%;
+    margin-top: -1rem;
+    padding: .2rem .4rem;
+    position: absolute;
+    text-transform: uppercase;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+}
+
+// @media (min-width: 48rem) {
+//   .header {
+//     .section-inner {
+//       align-items: center;
+//       display: flex;
+//       .portrait {
+//         margin: 0 2rem 0 0;
+//       }
+//       .intro {
+//         margin: 0;
+//         text-align: left;
+//       }
+//     }
+//   }
+// }

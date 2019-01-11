@@ -1,6 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 // import { DragScrollModule } from 'ngx-drag-scroll';
@@ -15,6 +14,8 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 export function init(routeService: AppRoutingService) {
   console.log('init');
@@ -24,15 +25,15 @@ export function init(routeService: AppRoutingService) {
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'my-app'}),
     BrowserTransferStateModule,
     // DragScrollModule,
-    FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
     TransferHttpCacheModule,
     AppRoutingModule,
     SharedModule,

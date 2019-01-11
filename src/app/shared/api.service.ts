@@ -5,6 +5,7 @@ import { makeStateKey, TransferState } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
+import { SlugifyPipe } from '../shared/slugify.pipe';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -16,7 +17,8 @@ export class ApiService {
   constructor(
     private http: HttpClient,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private transferState: TransferState
+    private slugifyPipe: SlugifyPipe,
+    private transferState: TransferState,
   ) { }
 
   get(url: string, id: string): Observable<any> {
@@ -75,6 +77,7 @@ export class ApiService {
             }
           });
           if (newRow['name']) {
+            newRow['path'] =  this.slugifyPipe.transform(sheet['properties']['title']) + '/' + this.slugifyPipe.transform(newRow['name']);
             rowItems.push(newRow);
           }
         }

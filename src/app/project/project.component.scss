@@ -1,6 +1,9 @@
+@import '../../colors';
+
 .header {
   background-position: center;
   background-size: cover;
+  color: $white;
   min-height: 100vh;
   position: relative;
 

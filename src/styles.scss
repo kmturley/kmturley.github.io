@@ -20,6 +20,10 @@ p {
   line-height: 1.4em;
 }
 
+a {
+  text-decoration: none;
+}
+
 .underline {
   position: relative;
   text-transform: uppercase;
@@ -40,63 +44,6 @@ p {
     max-width: 80rem;
   }
 }
-
-.header {
-  background: $blue-bayoux;
-  background: -moz-linear-gradient(-45deg, $blue-bayoux 0%, $mulled-wine 100%);
-  background: -webkit-linear-gradient(-45deg, $blue-bayoux 0%,$mulled-wine 100%);
-  background: linear-gradient(135deg, $blue-bayoux 0%,$mulled-wine 100%);
-  color: $white;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$blue-bayoux', endColorstr='$mulled-wine', GradientType=1);
-
-  .section-inner {
-    .intro {
-      margin: auto;
-      max-width: 28rem;
-      text-align: center;
-    }
-    .portrait {
-      margin: auto auto 1.5rem auto;
-      position: relative;
-      width: 10rem;
-      img {
-        border-radius: 100%;
-        max-width: 100%;
-      }
-    }
-  }
-
-  .logo {
-    background-color: $pavlova;
-    bottom: 0;
-    color: $mine-shaft-2;
-    font-size: 14px;
-    font-weight: 700;
-    left: 50%;
-    margin-top: -1rem;
-    padding: .2rem .4rem;
-    position: absolute;
-    text-transform: uppercase;
-    transform: translateX(-50%);
-    white-space: nowrap;
-  }
-}
-
-// @media (min-width: 48rem) {
-//   .header {
-//     .section-inner {
-//       align-items: center;
-//       display: flex;
-//       .portrait {
-//         margin: 0 2rem 0 0;
-//       }
-//       .intro {
-//         margin: 0;
-//         text-align: left;
-//       }
-//     }
-//   }
-// }
 
 .carousel {
   overflow-x: auto;
@@ -147,12 +94,44 @@ p {
 //   }
 // }
 
-.footer {
-  background-color: $river-bed;
-  color: $white;
-  a {
-    color: $white;
-    font-size: 20px;
-    text-decoration: none;
+
+.grid,
+.grid-2,
+.grid-3 {
+  display: grid;
+  grid-gap: 8px;
+}
+
+/* 30em = 480px */
+@media (min-width: 30em) {
+  .grid,
+  .grid-2 {
+    padding-right: calc(8px * 1);
+    grid-template-columns: repeat(2, 50%);
+  }
+  .grid-3 {
+    padding-right: calc(8px * 1);
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+/* 48em = 768px */
+@media (min-width: 48em) {
+  .grid {
+    grid-gap: 16px;
+    padding-right: calc(16px * 2);
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+
+/* 64em = 1024px */
+@media (min-width: 64em) {
+  .grid {
+    padding-right: calc(16px * 3);
+    grid-template-columns: repeat(4, 25%);
+  }
+  .grid-3 {
+    padding-right: calc(16px * 2);
+    grid-template-columns: repeat(3, 33.33%);
   }
 }

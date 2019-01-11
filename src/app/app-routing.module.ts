@@ -11,8 +11,13 @@ const routeTemplates: Routes = [
   },
   {
     pathMatch: 'full',
-    path: 'modules/page',
-    loadChildren: './page/page.module#PageModule'
+    path: 'modules/project',
+    loadChildren: './project/project.module#ProjectModule'
+  },
+  {
+    pathMatch: 'full',
+    path: 'modules/projects',
+    loadChildren: './projects/projects.module#ProjectsModule'
   }
 ];
 
