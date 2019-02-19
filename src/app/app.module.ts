@@ -17,7 +17,6 @@ import { environment } from '../environments/environment';
 import { FooterComponent } from './footer/footer.component';
 
 export function init(routeService: AppRoutingService) {
-  console.log('init');
   return () => routeService.getRoutes();
 }
 

@@ -74,6 +74,7 @@ export class AppRoutingService {
   login() {
     window['gapi'].auth2.getAuthInstance().signIn();
   }
+
   private loadGapi(): Observable<void> {
     return Observable.create((observer: Observer<boolean>) => {
       const node = document.createElement('script');
@@ -90,21 +91,17 @@ export class AppRoutingService {
 
   private loadGapiAuth(): Observable<Object> {
     return Observable.create((observer: Observer<Object>) => {
-      window['gapi'].load('client:auth2', () => {
+      window['gapi'].load('auth2', () => {
         const auth2 = window['gapi'].auth2.init({
           client_id: environment.CLIENT_ID,
           scope: environment.SCOPE,
-          ux_mode: 'redirect'
+          ux_mode: 'popup'
         });
-        auth2.currentUser.listen((user: any) => {
-          console.log('user', user, user.isSignedIn());
-          this.user = user;
-          observer.next(user);
+        auth2.signIn().then(() => {
+          this.user = auth2.currentUser.get();
+          observer.next(this.user);
           observer.complete();
         });
-        if (auth2 && auth2.isSignedIn.get() === true) {
-          auth2.signIn();
-        }
       });
     });
   }

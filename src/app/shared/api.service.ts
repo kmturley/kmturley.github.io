@@ -64,7 +64,7 @@ export class ApiService {
       const rowItems = [];
       const rows = sheet['data'][0]['rowData'];
       rows.forEach((row, index) => {
-        if (index > 0) {
+        if (index > 0 && row['values']) {
           const newRow = {};
           row['values'].forEach((rowItem, rowIndex) => {
             const rowKey = rows[0]['values'][rowIndex].formattedValue;

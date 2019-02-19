@@ -13,6 +13,8 @@ import {provideModuleMap} from '@nguniversal/module-map-ngfactory-loader';
 import {renderModuleFactory} from './utils';
 import {getPaths} from './static.paths';
 
+const shell = require('shelljs');
+
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./server/main');
 
@@ -29,7 +31,7 @@ getPaths().then((ROUTES: any[]) => {
   const jsonFolder = join(BROWSER_FOLDER, 'json');
   if (!existsSync(jsonFolder)) {
     console.log('+', jsonFolder);
-    mkdirSync(jsonFolder);
+    shell.mkdir('-p', jsonFolder);
   }
 
   // Iterate each route path
@@ -39,7 +41,7 @@ getPaths().then((ROUTES: any[]) => {
     // Make sure the directory structure is there
     if (!existsSync(routeFolder)) {
       console.log('+', routeFolder);
-      mkdirSync(routeFolder);
+      shell.mkdir('-p', routeFolder);
     }
 
     // Writes rendered HTML to index.html, replacing the file if it already exists.
@@ -52,10 +54,8 @@ getPaths().then((ROUTES: any[]) => {
     })).then((res: { output: string, data: object }) => {
       // write html file
       const htmlFile = join(routeFolder, 'index.html');
-      if (!existsSync(htmlFile)) {
-        console.log('+', htmlFile);
-        writeFileSync(htmlFile, res.output);
-      }
+      console.log('+', htmlFile);
+      writeFileSync(htmlFile, res.output);
 
       // write json files from TransferState objects
       Object.keys(res.data).forEach(jsonKey => {

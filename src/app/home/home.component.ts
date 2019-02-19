@@ -1,9 +1,5 @@
-import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { isPlatformBrowser } from '@angular/common';
-import { SlugifyPipe } from '../shared/slugify.pipe';
-import { forkJoin } from 'rxjs';
+import { NguCarouselConfig } from '@ngu/carousel';
 
 import { environment } from '../../environments/environment';
 import { ApiService } from '../shared/api.service';
@@ -18,6 +14,24 @@ export class HomeComponent implements OnInit {
   awards: Array<object>;
   brands: Array<object>;
   projects: Array<object>;
+
+  public carouselLarge: NguCarouselConfig = {
+    grid: {xs: 0, sm: 0, md: 0, lg: 0, all: 300},
+    load: 1,
+    loop: false,
+    slide: 1,
+    touch: true,
+    velocity: 0
+  };
+
+  public carouselSmall: NguCarouselConfig = {
+    grid: {xs: 0, sm: 0, md: 0, lg: 0, all: 120},
+    load: 1,
+    loop: false,
+    slide: 1,
+    touch: true,
+    velocity: 0
+  };
 
   constructor(
     private api: ApiService
