@@ -21,7 +21,11 @@ export class HomeComponent implements OnInit {
     loop: false,
     slide: 1,
     touch: true,
-    velocity: 0
+    velocity: 0,
+    point: {
+      visible: false,
+      hideOnSingleSlide: true
+    }
   };
 
   public carouselSmall: NguCarouselConfig = {
@@ -30,7 +34,11 @@ export class HomeComponent implements OnInit {
     loop: false,
     slide: 1,
     touch: true,
-    velocity: 0
+    velocity: 0,
+    point: {
+      visible: false,
+      hideOnSingleSlide: true
+    }
   };
 
   constructor(
