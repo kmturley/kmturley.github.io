@@ -75,6 +75,44 @@ a {
       max-width: 100%;
     }
   }
+
+  &-next,
+  &-prev {
+    background-color: rgba(0, 0, 0, .1);
+    border: 0;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 10px 15px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color .25s ease-out;
+    z-index: 2;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    img {
+      margin-left: 3px;
+      width: 15px;
+    }
+  }
+
+  &-next {
+    right: 0;
+  }
+
+  &-prev {
+    left: 0;
+
+    img {
+      margin-left: 0;
+      margin-right: 3px;
+      transform: scale(-1);
+    }
+  }
+
 }
 
 @media (min-width: 84rem) {

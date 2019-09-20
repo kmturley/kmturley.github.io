@@ -25,50 +25,58 @@
       <a routerLink="projects">view all</a>
     </div>
   </div>
-  <ngu-carousel [inputs]="carouselLarge" [dataSource]="projects" class="carousel" *ngIf="projects">
+  <ngu-carousel #carouselProjects [inputs]="carouselLarge" [dataSource]="projects" class="carousel" *ngIf="projects">
     <ngu-tile *nguCarouselDef="let project; let i = index">
       <a [routerLink]="project.path" class="carousel-item project" [title]="project.description" draggable="false">
         <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
         <img src="../assets/projects/placeholder.jpg" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage draggable="false" />
       </a>
     </ngu-tile>
+    <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselProjects.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
+    <button NguCarouselNext class="carousel-next" [style.opacity]="carouselProjects.isLast ? 0:1"><img src="../assets/arrow-right.svg" alt="Next" /></button>
   </ngu-carousel>
 </div>
 <div class="section articles">
   <div class="section-inner">
     <h3 class="underline">Articles</h3>
   </div>
-  <ngu-carousel [inputs]="carouselLarge" [dataSource]="articles" class="carousel" *ngIf="articles">
+  <ngu-carousel #carouselArticles [inputs]="carouselLarge" [dataSource]="articles" class="carousel" *ngIf="articles">
     <ngu-tile *nguCarouselDef="let article; let i = index">
       <a [href]="article.url" class="carousel-item article" target="_blank" rel="noopener" [title]="article.name" draggable="false">
         {{ article.name }}
         <img src="../assets/link.svg" alt="open" class="link" draggable="false" />
       </a>
     </ngu-tile>
+    <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselArticles.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
+    <button NguCarouselNext class="carousel-next" [style.opacity]="carouselArticles.isLast ? 0:1"><img src="../assets/arrow-right.svg" alt="Next" /></button>
   </ngu-carousel>
 </div>
 <div class="section brands">
   <div class="section-inner">
-    <h3 class="underline">Partners</h3>
+    <h3 class="underline">Clients</h3>
   </div>
-  <ngu-carousel [inputs]="carouselSmall" [dataSource]="brands" class="carousel" *ngIf="brands">
+  <ngu-carousel #carouselBrands [inputs]="carouselSmall" [dataSource]="brands" class="carousel" *ngIf="brands">
     <ngu-tile *nguCarouselDef="let brand; let i = index">
       <a [href]="brand.url" class="carousel-item brand" target="_blank" rel="noopener" [title]="brand.name" draggable="false">
         <img src="../assets/brands/placeholder.jpg" [srcLazy]="brand.images[0]" [alt]="brand.name" appLazyLoadImage draggable="false" />
       </a>
     </ngu-tile>
+    <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselBrands.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
+    <button NguCarouselNext class="carousel-next" [style.opacity]="carouselBrands.isLast ? 0:1"><img src="../assets/arrow-right.svg" alt="Next" /></button>
   </ngu-carousel>
 </div>
 <div class="section awards">
   <div class="section-inner">
     <h3 class="underline">Awards</h3>
   </div>
-  <ngu-carousel [inputs]="carouselSmall" [dataSource]="awards" class="carousel" *ngIf="awards">
+  <ngu-carousel #carouselAwards [inputs]="carouselSmall" [dataSource]="awards" class="carousel" *ngIf="awards">
     <ngu-tile *nguCarouselDef="let award; let i = index">
       <a [href]="award.url" class="carousel-item award" target="_blank" rel="noopener" [title]="award.description" draggable="false">
         <img src="../assets/awards/placeholder.jpg" [srcLazy]="award.images[0]" [alt]="award.name" appLazyLoadImage draggable="false" />
         <span>{{ award.year }}</span>
       </a>
     </ngu-tile>
+    <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselAwards.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
+    <button NguCarouselNext class="carousel-next" [style.opacity]="carouselAwards.isLast ? 0:1"><img src="../assets/arrow-right.svg" alt="Next" /></button>
   </ngu-carousel>
 </div>
