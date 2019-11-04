@@ -1,12 +1,12 @@
 <div class="section header">
   <div class="section-inner">
     <a [routerLink]="'/'" class="portrait">
-      <img src="../assets/placeholder.jpg" srcLazy="../assets/kim-turley.jpg" alt="Kim Turley" appLazyLoadImage />
+      <img src="../assets/placeholder.png" srcLazy="../assets/kim-turley.jpg" alt="Kim Turley" appLazyLoadImage *ngIf="image" />
       <span class="logo">Kim Turley</span>
     </a>
     <div class="intro">
-      <h1>Digital Strategist, Creative Thinker &amp; Technologist</h1>
-      <p>{{ careerLength }} years experience creating cutting-edge digital experiences in partnership with top brands.</p>
+      <h1 *ngIf="title">{{ title }}</h1>
+      <p *ngIf="subtitle">{{ subtitle }}</p>
     </div>
   </div>
 </div>

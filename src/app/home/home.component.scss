@@ -66,6 +66,10 @@
     transition: transform .1s ease-out;
     z-index: 1;
 
+    img {
+      max-height: 157px;
+    }
+
     span {
       background-color: $white;
       bottom: 0;

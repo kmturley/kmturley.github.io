@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   brands: Array<object>;
   projects: Array<object>;
 
+  public careerLength: number;
+
   public carouselLarge: NguCarouselConfig = {
     grid: {xs: 0, sm: 0, md: 0, lg: 0, all: 300},
     load: 1,
@@ -47,6 +49,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     console.log('HomeComponent');
+    const startDate = new Date(2006, 9, 0).getTime();
+    const endDate = new Date().getTime();
+    this.careerLength = this.toYear(endDate - startDate);
+
     this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'articles').subscribe(items => {
       this.articles = items;
       // console.log('articles', this.articles);
@@ -63,5 +69,9 @@ export class HomeComponent implements OnInit {
       this.projects = items;
       // console.log('projects', this.projects);
     });
+  }
+
+  toYear(num: number) {
+    return Math.ceil(num / 1000 / 60 / 60 / 24 / 365);
   }
 }

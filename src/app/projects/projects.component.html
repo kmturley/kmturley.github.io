@@ -42,7 +42,7 @@
     <div class="grid">
       <a [routerLink]="'/' + project.path" class="project" *ngFor="let project of projects" [title]="project.description">
         <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
-        <img src="../assets/projects/placeholder.jpg" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage />
+        <img src="../assets/placeholder.png" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage />
       </a>
     </div>
   </div>

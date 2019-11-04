@@ -1,18 +1,18 @@
-<app-header></app-header>
+<app-header image="true" title="Digital Strategist, Creative Thinker &amp; Technologist" [subtitle]="careerLength + ' years experience creating cutting-edge digital experiences in partnership with top brands.'"></app-header>
 <div class="section services">
   <div class="section-inner">
     <h3 class="underline">Skills</h3>
     <div class="service-list">
       <div class="service">
-        <img src="../assets/skills/placeholder.jpg" srcLazy="../assets/skills/lightbulb.svg" alt="Lightbulb" appLazyLoadImage />
+        <img src="../assets/placeholder.png" srcLazy="../assets/skills/lightbulb.svg" alt="Lightbulb" appLazyLoadImage />
         <p>Uncovering unmet market needs and inventing products &amp; services with impact.</p>
       </div>
       <div class="service">
-        <img src="../assets/skills/placeholder.jpg" srcLazy="../assets/skills/route.svg" alt="Route" appLazyLoadImage />
+        <img src="../assets/placeholder.png" srcLazy="../assets/skills/route.svg" alt="Route" appLazyLoadImage />
         <p>Transforming teams &amp; processes to cope with our ever-changing world.</p>
       </div>
       <div class="service">
-        <img src="../assets/skills/placeholder.jpg" srcLazy="../assets/skills/products.svg" alt="Products" appLazyLoadImage />
+        <img src="../assets/placeholder.png" srcLazy="../assets/skills/products.svg" alt="Products" appLazyLoadImage />
         <p>Designing and building secure, scalable digital products &amp; services quickly.</p>
       </div>
     </div>
@@ -22,14 +22,14 @@
   <div class="section-inner">
     <div class="section-title">
       <h3 class="underline">Projects</h3>
-      <a routerLink="projects">view all</a>
+      <a routerLink="projects">view all ({{ projects.length }})</a>
     </div>
   </div>
   <ngu-carousel #carouselProjects [inputs]="carouselLarge" [dataSource]="projects" class="carousel" *ngIf="projects">
     <ngu-tile *nguCarouselDef="let project; let i = index">
       <a [routerLink]="project.path" class="carousel-item project" [title]="project.description" draggable="false">
         <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
-        <img src="../assets/projects/placeholder.jpg" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage draggable="false" />
+        <img src="../assets/placeholder.png" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage draggable="false" />
       </a>
     </ngu-tile>
     <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselProjects.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
@@ -58,7 +58,7 @@
   <ngu-carousel #carouselBrands [inputs]="carouselSmall" [dataSource]="brands" class="carousel" *ngIf="brands">
     <ngu-tile *nguCarouselDef="let brand; let i = index">
       <a [href]="brand.url" class="carousel-item brand" target="_blank" rel="noopener" [title]="brand.name" draggable="false">
-        <img src="../assets/brands/placeholder.jpg" [srcLazy]="brand.images[0]" [alt]="brand.name" appLazyLoadImage draggable="false" />
+        <img src="../assets/placeholder.png" [srcLazy]="brand.images[0]" [alt]="brand.name" appLazyLoadImage draggable="false" />
       </a>
     </ngu-tile>
     <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselBrands.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
@@ -72,7 +72,7 @@
   <ngu-carousel #carouselAwards [inputs]="carouselSmall" [dataSource]="awards" class="carousel" *ngIf="awards">
     <ngu-tile *nguCarouselDef="let award; let i = index">
       <a [href]="award.url" class="carousel-item award" target="_blank" rel="noopener" [title]="award.description" draggable="false">
-        <img src="../assets/awards/placeholder.jpg" [srcLazy]="award.images[0]" [alt]="award.name" appLazyLoadImage draggable="false" />
+        <img src="../assets/placeholder.png" [srcLazy]="award.images[0]" [alt]="award.name" appLazyLoadImage draggable="false" />
         <span>{{ award.year }}</span>
       </a>
     </ngu-tile>
