@@ -5,8 +5,8 @@ const slugify = require('slugify');
 
 const sheet_id = '1KhjaYHc01RKvq5UrJlTdi9mz5O9IcTF5Uh-7bYdlsks';
 
-// const sheet_range = 'projects!A1:H50';
-// const project_json = './src/assets/json/projects.json';
+const sheet_range = 'projects!A1:H50';
+const project_json = './src/assets/json/projects.json';
 
 // const sheet_range = 'articles!A1:C25';
 // const project_json = './src/assets/json/articles.json';
@@ -14,8 +14,8 @@ const sheet_id = '1KhjaYHc01RKvq5UrJlTdi9mz5O9IcTF5Uh-7bYdlsks';
 // const sheet_range = 'brands!A1:C25';
 // const project_json = './src/assets/json/brands.json';
 
-const sheet_range = 'awards!A1:F25';
-const project_json = './src/assets/json/awards.json';
+// const sheet_range = 'awards!A1:F25';
+// const project_json = './src/assets/json/awards.json';
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
@@ -121,10 +121,14 @@ function buildJsonResult(headers, currentLine) {
     if (typeof value === 'string' && value.includes('\n')) {
       value = value.split('\n');;
     }
-    // convert string fields containing only numbers
-    if (Number(value)) {
-      value = Number(value);
+    // force new lines with label ending in (s)
+    if (typeof value === 'string' && propertyName.charAt(propertyName.length - 1) === 's') {
+      value = value.split('\n');
     }
+    // convert string fields containing only numbers
+    // if (Number(value)) {
+    //   value = Number(value);
+    // }
     jsonObject[propertyName] = value;
   }
   return jsonObject;

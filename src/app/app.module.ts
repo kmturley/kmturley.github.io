@@ -46,11 +46,11 @@ export function init(routeService: AppRoutingService) {
       deps: [AppRoutingService],
       multi: true
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthService,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthService,
+    //   multi: true
+    // },
     ApiService,
     AppRoutingService
   ],

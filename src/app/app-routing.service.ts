@@ -19,28 +19,31 @@ export class AppRoutingService {
   ) { }
 
   getRoutes() {
-    if (environment.production) {
-      return new Promise((resolve, reject) => {
-        this.getData(resolve);
-      });
-    } else if (isPlatformBrowser(this.platformId)) {
-      return new Promise((resolve, reject) => {
-        this.loadGapi().subscribe((a) => {
-          this.loadGapiAuth().subscribe((user: any) => {
-            if (user && user.isSignedIn()) {
-              localStorage.setItem('token', user['getAuthResponse']().access_token);
-              this.getData(resolve);
-            } else {
-              resolve(this.routes);
-            }
-          });
-        });
-      });
-    }
+    return new Promise((resolve, reject) => {
+      this.getData(resolve);
+    });
+    // if (environment.production) {
+    //   return new Promise((resolve, reject) => {
+    //     this.getData(resolve);
+    //   });
+    // } else if (isPlatformBrowser(this.platformId)) {
+    //   return new Promise((resolve, reject) => {
+    //     this.loadGapi().subscribe((a) => {
+    //       this.loadGapiAuth().subscribe((user: any) => {
+    //         if (user && user.isSignedIn()) {
+    //           localStorage.setItem('token', user['getAuthResponse']().access_token);
+    //           this.getData(resolve);
+    //         } else {
+    //           resolve(this.routes);
+    //         }
+    //       });
+    //     });
+    //   });
+    // }
   }
 
   getData(resolve) {
-    return this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(routes => {
+    return this.api.get(`/assets/json/projects.json`, 'projects').subscribe(routes => {
       this.routes.push({
         pathMatch: 'full',
         path: '',
@@ -60,7 +63,7 @@ export class AppRoutingService {
       routes.forEach((route) => {
         this.routes.push({
           pathMatch: 'full',
-          path: route.path,
+          path: this.slugifyPipe.transform(route.client) + '-' + this.slugifyPipe.transform(route.name),
           loadChildren: './project/project.module#ProjectModule',
           data: {
             name: route.name

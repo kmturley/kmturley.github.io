@@ -1,6 +1,6 @@
 <app-header title="Projects"></app-header>
 <div class="section image">
-  <img src="../assets/placeholder.png" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage *ngIf="project.images[0]" />
+  <img src="../assets/placeholder.png" [srcLazy]="project.images" [alt]="project.name" appLazyLoadImage *ngIf="project.images[0]" />
 </div>
 <div class="section details">
   <h1>{{ project.name }}</h1>
@@ -9,25 +9,25 @@
   <div class="panels">
     <div class="panel">
       <h3>Services</h3>
-      <ul>
+      <ul *ngIf="isArray(project.services)">
         <li *ngFor="let service of project.services">{{ service }}</li>
       </ul>
     </div>
     <div class="panel">
       <h3>Activites</h3>
-      <ul>
+      <ul *ngIf="isArray(project.activities)">
         <li *ngFor="let activity of project.activities">{{ activity }}</li>
       </ul>
     </div>
     <div class="panel">
       <h3>Technologies</h3>
-      <ul>
+      <ul *ngIf="isArray(project.technologies)">
         <li *ngFor="let technology of project.technologies">{{ technology }}</li>
       </ul>
     </div>
     <div class="panel">
       <h3>Years</h3>
-      <ul>
+      <ul *ngIf="isArray(project.years)">
         <li *ngFor="let year of project.years">{{ year }}</li>
       </ul>
     </div>

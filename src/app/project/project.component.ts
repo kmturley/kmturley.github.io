@@ -54,7 +54,7 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
     console.log('ProjectComponent');
     this.route.data.subscribe((data) => {
-      this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(projects => {
+      this.api.get(`/assets/json/projects.json`, 'projects').subscribe(projects => {
         this.project = projects.filter((project: Project) => {
           return project.name === data.name;
         })[0];
@@ -63,6 +63,10 @@ export class ProjectComponent implements OnInit {
         this.meta.updateTag({ name: 'description', content: this.project['name'] });
       });
     });
+  }
+
+  isArray(obj: any) {
+    return Array.isArray(obj);
   }
 
 }

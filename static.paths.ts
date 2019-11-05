@@ -27,7 +27,7 @@ export function getPaths() {
         });
       }
       items.forEach((item) => {
-        routes.push('/' + item.path);
+        routes.push('/' + slugify(item.name, { lower: true }));
       });
       resolve(routes);
     });

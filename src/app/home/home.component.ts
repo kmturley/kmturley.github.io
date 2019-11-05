@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NguCarouselConfig } from '@ngu/carousel';
+import { SlugifyPipe } from '../shared/slugify.pipe';
 
 import { environment } from '../../environments/environment';
 import { ApiService } from '../shared/api.service';
@@ -44,7 +45,8 @@ export class HomeComponent implements OnInit {
   };
 
   constructor(
-    private api: ApiService
+    private api: ApiService,
+    public slugifyPipe: SlugifyPipe
   ) {}
 
   ngOnInit() {
@@ -53,19 +55,19 @@ export class HomeComponent implements OnInit {
     const endDate = new Date().getTime();
     this.careerLength = this.toYear(endDate - startDate);
 
-    this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'articles').subscribe(items => {
+    this.api.get(`/assets/json/articles.json`, 'articles').subscribe(items => {
       this.articles = items;
       // console.log('articles', this.articles);
     });
-    this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'awards').subscribe(items => {
+    this.api.get(`/assets/json/awards.json`, 'awards').subscribe(items => {
       this.awards = items;
       // console.log('awards', this.awards);
     });
-    this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'brands').subscribe(items => {
+    this.api.get(`/assets/json/brands.json`, 'brands').subscribe(items => {
       this.brands = items;
       // console.log('brands', this.brands);
     });
-    this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(items => {
+    this.api.get(`/assets/json/projects.json`, 'projects').subscribe(items => {
       this.projects = items;
       // console.log('projects', this.projects);
     });

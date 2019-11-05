@@ -47,7 +47,7 @@ export class ProjectsComponent implements OnInit {
       this.selectTechnologies = new FormControl(params['technologies'] || 'all');
       this.selectYears = new FormControl(params['years'] || 'all');
       this.inputSearch = new FormControl(params['search'] || '');
-      this.api.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, 'projects').subscribe(projects => {
+      this.api.get(`/assets/json/projects.json`, 'projects').subscribe(projects => {
         this.projects = projects.filter((project) => {
           // TODO make this more DRY
           this.activities = this.activities ? this.activities.concat(project.activities) : project.activities;
