@@ -28,6 +28,21 @@ Create a Google spreadsheet with named columns. You can duplicate my template he
     https://docs.google.com/spreadsheets/d/1PGFoY15Wi0RFxjycqF_oXYKdjH8IM5k3_IxJLFI90aU/edit#gid=0
 
 
+## Updating project data
+
+Enable the Google Sheets API for your project at:
+
+    https://console.cloud.google.com/apis/library/sheets.googleapis.com
+
+Download a credentials file and place at /credentials.json
+
+    https://console.cloud.google.com/apis/api/sheets.googleapis.com/credentials
+
+Run the download script to update src/assets/products.json:
+
+    npm run download
+
+
 ## Usage
 
 Run the server:
