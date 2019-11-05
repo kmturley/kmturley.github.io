@@ -1,8 +1,35 @@
-<app-header></app-header>
-<div class="section header" [ngStyle]="{ 'background-image': 'linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.7)),url(' + project.images[0] + ')'}">
-  <div class="section-inner">
-    <h1>{{ project.name }}</h1>
-    <h2>{{ project.client }}</h2>
-    <p>{{ project.description }}</p>
+<app-header title="Projects"></app-header>
+<div class="section image">
+  <img src="../assets/placeholder.png" [srcLazy]="project.images[0]" [alt]="project.name" appLazyLoadImage *ngIf="project.images[0]" />
+</div>
+<div class="section details">
+  <h1>{{ project.name }}</h1>
+  <h2>{{ project.client }}</h2>
+  <p>{{ project.description }}</p>
+  <div class="panels">
+    <div class="panel">
+      <h3>Services</h3>
+      <ul>
+        <li *ngFor="let service of project.services">{{ service }}</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Activites</h3>
+      <ul>
+        <li *ngFor="let activity of project.activities">{{ activity }}</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Technologies</h3>
+      <ul>
+        <li *ngFor="let technology of project.technologies">{{ technology }}</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Years</h3>
+      <ul>
+        <li *ngFor="let year of project.years">{{ year }}</li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -1,14 +1,28 @@
 @import '../../colors';
 
-.header {
-  background-position: center;
-  background-size: cover;
-  color: $white;
-  min-height: 100vh;
-  position: relative;
+.image {
+  img {
+    max-width: 100%;
+  }
+}
 
-  .section-inner {
-    bottom: 0;
-    position: absolute;
+.details {
+  line-height: 1.5em;
+  padding: 2rem;
+
+  .panels {
+    margin-top: 1rem;
+  }
+}
+
+
+/* 48em = 768px */
+@media (min-width: 48em) {
+  .panels {
+    display: flex;
+
+    .panel {
+      width: 50%;
+    }
   }
 }
