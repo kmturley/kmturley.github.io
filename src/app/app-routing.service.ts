@@ -63,7 +63,7 @@ export class AppRoutingService {
       routes.forEach((route) => {
         this.routes.push({
           pathMatch: 'full',
-          path: this.slugifyPipe.transform(route.client) + '-' + this.slugifyPipe.transform(route.name),
+          path: 'projects/' + this.slugifyPipe.transform(route.client) + '-' + this.slugifyPipe.transform(route.name),
           loadChildren: './project/project.module#ProjectModule',
           data: {
             name: route.name

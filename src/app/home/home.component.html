@@ -27,7 +27,7 @@
   </div>
   <ngu-carousel #carouselProjects [inputs]="carouselLarge" [dataSource]="projects" class="carousel" *ngIf="projects">
     <ngu-tile *nguCarouselDef="let project; let i = index">
-      <a [routerLink]="slugifyPipe.transform(project.client) + '-' + slugifyPipe.transform(project.name)" class="carousel-item project" [title]="project.description" draggable="false">
+      <a [routerLink]="'/projects/' + slugifyPipe.transform(project.client) + '-' + slugifyPipe.transform(project.name)" class="carousel-item project" [title]="project.description" draggable="false">
         <span><strong class="project-name">{{ project.name }}</strong><br/>{{ project.client }}</span>
         <img src="../assets/placeholder.png" [srcLazy]="project.images" [alt]="project.name" appLazyLoadImage draggable="false" />
       </a>
