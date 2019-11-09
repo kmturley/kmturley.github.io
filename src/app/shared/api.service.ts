@@ -35,9 +35,9 @@ export class ApiService {
       // if (environment.production && isPlatformBrowser(this.platformId)) {
       //   url = `./json/${id}.json`;
       // }
-      // if (isPlatformServer(this.platformId)) {
-      //   url = `http://localhost:4000${url}`;
-      // }
+      if (isPlatformServer(this.platformId)) {
+        url = `http://localhost:4000${url}`;
+      }
       console.log('api.get.http', url);
       return this.http.get(url).pipe(
         map(items => {
