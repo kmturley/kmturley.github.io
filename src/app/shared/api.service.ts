@@ -1,6 +1,6 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { makeStateKey, TransferState } from '@angular/platform-browser';
 import { map } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
@@ -32,26 +32,29 @@ export class ApiService {
       const item = this.transferState.get(key, null);
       return of(item);
     } else {
-      console.log('api.get.http');
-      if (environment.production && isPlatformBrowser(this.platformId)) {
-        url = `./json/${id}.json`;
-      }
+      // if (environment.production && isPlatformBrowser(this.platformId)) {
+      //   url = `./json/${id}.json`;
+      // }
+      // if (isPlatformServer(this.platformId)) {
+      //   url = `http://localhost:4000${url}`;
+      // }
+      console.log('api.get.http', url);
       return this.http.get(url).pipe(
         map(items => {
-          if (items['sheets']) {
-            const sheetItems = this.convertSheets(items['sheets']);
-            Object.keys(sheetItems).forEach((sheetId) => {
-              const sheetKey = makeStateKey(sheetId);
-              this.data[sheetId] = sheetItems[sheetId];
-              this.transferState.set(sheetKey, sheetItems[sheetId]);
-              if (sheetId === id) {
-                items = sheetItems[sheetId];
-              }
-            });
-          } else {
-            this.data[id] = items;
-            this.transferState.set(key, items);
-          }
+          // if (items['sheets']) {
+          //   const sheetItems = this.convertSheets(items['sheets']);
+          //   Object.keys(sheetItems).forEach((sheetId) => {
+          //     const sheetKey = makeStateKey(sheetId);
+          //     this.data[sheetId] = sheetItems[sheetId];
+          //     this.transferState.set(sheetKey, sheetItems[sheetId]);
+          //     if (sheetId === id) {
+          //       items = sheetItems[sheetId];
+          //     }
+          //   });
+          // } else {
+          // }
+          this.data[id] = items;
+          this.transferState.set(key, items);
           return items;
         })
       );

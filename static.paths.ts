@@ -1,8 +1,12 @@
 import { environment } from './src/environments/environment.prod';
 
+const fs = require('fs');
+const path = require('path');
 const request = require('request');
 const slugify = require('slugify');
-const routes = ['/', '/projects'];
+
+const pathSheet = `${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`;
+const pathJson = path.join(__dirname, 'browser/assets/json/projects.json');
 const req = request.defaults({
   headers: {
     'Authorization': `Bearer ${environment.token}`
@@ -11,10 +15,24 @@ const req = request.defaults({
 
 export function getPaths() {
   return new Promise((resolve, reject) => {
+    console.log('getPaths', pathJson);
+    const routes = ['/', '/projects'];
+    const projects = JSON.parse(fs.readFileSync(pathJson, 'utf8'));
+    console.log('getPathsFromSheet complete', projects.length);
+    projects.forEach((project) => {
+      routes.push('/projects/' + slugify(project.client, { lower: true }) + '-' + slugify(project.name, { lower: true }));
+    });
+    resolve(routes);
+  });
+}
+
+export function getPathsFromSheet() {
+  return new Promise((resolve, reject) => {
+    console.log('getPathsFromSheet', pathSheet);
     const id = 'projects';
-    console.log(`getPaths: ${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`);
-    req.get(`${environment.API_URL}${environment.SHEET_ID}?includeGridData=true`, (err, res, items) => {
-      console.log('getPaths complete');
+    const routes = ['/', '/projects'];
+    req.get(pathSheet, (err, res, items) => {
+      console.log('getPathsFromSheet complete', items.length);
       if (err) { return reject(err); }
       items = JSON.parse(items);
       if (items['error']) { return reject(items); }
@@ -27,7 +45,7 @@ export function getPaths() {
         });
       }
       items.forEach((item) => {
-        routes.push('/' + slugify(item.name, { lower: true }));
+        routes.push('/projects/' + slugify(item.client, { lower: true }) + '-' + slugify(item.name, { lower: true }));
       });
       resolve(routes);
     });
