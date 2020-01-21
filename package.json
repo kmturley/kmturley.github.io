@@ -6,7 +6,7 @@
     "postinstall": "node ./node_modules/ng-node-environment/index.js",
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run build:prerender && npm run generate:prerender",
+    "build": "npm run generate:prerender",
     "download": "node download.js",
     "lint": "ng lint angular-google-sheets",
     "build:dev": "rm -rf dist/ && ng build --configuration=dev",

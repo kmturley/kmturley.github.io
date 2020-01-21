@@ -50,14 +50,15 @@ In Chrome Dev tools, copy your Authorization Header Token from a Google Sheets r
 
 Then run the command to build static:
 
+    npm run build:ssr && npm run serve:ssr
     npm run build
 
 Or to build with custom base url:
 
-    node_modules/.bin/ng build --prod --base-href https://kimturley.co.uk
+    node_modules/.bin/ng build --configuration=production --base-href=https://kimturley.co.uk
     node_modules/.bin/ng run angular-google-sheets:server:production
-    npm run serve:ssr
-    npm run compile:server && npm run generate:prerender
+    npm run build:ssr && npm run serve:ssr
+    npm run build
 
 To view the statically generated version locally use:
 
