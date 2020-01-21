@@ -163,3 +163,20 @@
     }
   }
 }
+
+.certifications {
+  background-color: $gallery;
+
+  .item {
+    margin-top: 0;
+
+    .carousel-item {
+      background-color: $thunder;
+    }
+
+    img {
+      margin: auto;
+      max-height: 140px;
+    }
+  }
+}

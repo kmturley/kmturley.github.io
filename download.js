@@ -8,15 +8,19 @@ const sheet_id = '1KhjaYHc01RKvq5UrJlTdi9mz5O9IcTF5Uh-7bYdlsks';
 const pages = [
   {
     project_json: './src/assets/json/articles.json',
-    sheet_range: 'articles!A1:C25'
+    sheet_range: 'articles!A1:C50'
   },
   {
     project_json: './src/assets/json/awards.json',
-    sheet_range: 'awards!A1:F25'
+    sheet_range: 'awards!A1:F50'
   },
   {
     project_json: './src/assets/json/brands.json',
-    sheet_range: 'brands!A1:C25'
+    sheet_range: 'brands!A1:C50'
+  },
+  {
+    project_json: './src/assets/json/certifications.json',
+    sheet_range: 'certifications!A1:E50'
   },
   {
     project_json: './src/assets/json/projects.json',

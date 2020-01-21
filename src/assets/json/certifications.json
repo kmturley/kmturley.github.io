@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Google Cloud Certified - Professional Cloud Architect",
+    "images": [
+      "../assets/certifications/google-cloud-certified-cloud-architect.png"
+    ],
+    "description": "A Google Cloud Certified - Professional Cloud Architect enables organizations to leverage Google Cloud technologies. Through an understanding of cloud architecture and Google technology, this individual can design, develop, and manage robust, secure, scalable, highly available, and dynamic solutions to drive business objectives.",
+    "year": 2020,
+    "url": "https://www.credential.net/9c3ec15e-2ec7-4755-9c69-c343995f527a"
+  },
+  {
+    "name": "Pluralsight SkillIQ - Angular",
+    "images": [
+      "../assets/certifications/pluralsight-angular.png"
+    ],
+    "description": "Pluralsight SkillIQ - Angular",
+    "year": 2019,
+    "url": "https://app.pluralsight.com/profile/kim-turley"
+  },
+  {
+    "name": "Pluralsight SkillIQ - CSS",
+    "images": [
+      "../assets/certifications/pluralsight-css.png"
+    ],
+    "description": "Pluralsight SkillIQ - CSS",
+    "year": 2019,
+    "url": "https://app.pluralsight.com/profile/kim-turley"
+  },
+  {
+    "name": "Pluralsight SkillIQ - HTML5",
+    "images": [
+      "../assets/certifications/pluralsight-html5.png"
+    ],
+    "description": "Pluralsight SkillIQ - HTML5",
+    "year": 2019,
+    "url": "https://app.pluralsight.com/profile/kim-turley"
+  },
+  {
+    "name": "Pluralsight SkillIQ - JavaScript",
+    "images": [
+      "../assets/certifications/pluralsight-javascript.png"
+    ],
+    "description": "Pluralsight SkillIQ - JavaScript",
+    "year": 2019,
+    "url": "https://app.pluralsight.com/profile/kim-turley"
+  },
+  {
+    "name": "Pluralsight SkillIQ - NodeJS",
+    "images": [
+      "../assets/certifications/pluralsight-node.png"
+    ],
+    "description": "Pluralsight SkillIQ - NodeJS",
+    "year": 2019,
+    "url": "https://app.pluralsight.com/profile/kim-turley"
+  },
+  {
+    "name": "Pluralsight SkillIQ - Npm",
+    "images": [
+      "../assets/certifications/pluralsight-npm.png"
+    ],
+    "description": "Pluralsight SkillIQ - Npm",
+    "year": 2019,
+    "url": "https://app.pluralsight.com/profile/kim-turley"
+  }
+]

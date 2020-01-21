@@ -1,4 +1,4 @@
-<app-header image="true" title="Digital Strategist, Creative Thinker &amp; Technologist" [subtitle]="careerLength + ' years experience creating cutting-edge digital experiences in partnership with top brands.'"></app-header>
+<app-header image="true" title="Director of Technology, Engineering &amp; Architecture" [subtitle]="careerLength + ' years experience creating digital products &amp; platforms in partnership with top brands.'"></app-header>
 <div class="section services">
   <div class="section-inner">
     <h3 class="underline">Skills</h3>
@@ -78,5 +78,19 @@
     </ngu-tile>
     <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselAwards.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
     <button NguCarouselNext class="carousel-next" [style.opacity]="carouselAwards.isLast ? 0:1"><img src="../assets/arrow-right.svg" alt="Next" /></button>
+  </ngu-carousel>
+</div>
+<div class="section certifications">
+  <div class="section-inner">
+    <h3 class="underline">Certifications</h3>
+  </div>
+  <ngu-carousel #carouselCertifications [inputs]="carouselLarge" [dataSource]="certifications" class="carousel" *ngIf="certifications">
+    <ngu-tile *nguCarouselDef="let certification; let i = index">
+      <a [href]="certification.url" class="carousel-item certification" target="_blank" rel="noopener" [title]="certification.description" draggable="false">
+        <img src="../assets/placeholder.png" [srcLazy]="certification.images" [alt]="certification.name" appLazyLoadImage draggable="false" />
+      </a>
+    </ngu-tile>
+    <button NguCarouselPrev class="carousel-prev" [style.opacity]="carouselCertifications.isFirst ? 0:1"><img src="../assets/arrow-right.svg" alt="Previous" /></button>
+    <button NguCarouselNext class="carousel-next" [style.opacity]="carouselCertifications.isLast ? 0:1"><img src="../assets/arrow-right.svg" alt="Next" /></button>
   </ngu-carousel>
 </div>

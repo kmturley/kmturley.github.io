@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   articles: Array<object>;
   awards: Array<object>;
   brands: Array<object>;
+  certifications: Array<object>;
   projects: Array<object>;
 
   public careerLength: number;
@@ -66,6 +67,10 @@ export class HomeComponent implements OnInit {
     this.api.get(`/assets/json/brands.json`, 'brands').subscribe(items => {
       this.brands = items;
       // console.log('brands', this.brands);
+    });
+    this.api.get(`/assets/json/certifications.json`, 'certifications').subscribe(items => {
+      this.certifications = items;
+      // console.log('certifications', this.certifications);
     });
     this.api.get(`/assets/json/projects.json`, 'projects').subscribe(items => {
       this.projects = items;
