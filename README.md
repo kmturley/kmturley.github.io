@@ -13,16 +13,6 @@ Install dependencies using:
 
     npm install
 
-Create an file at src/environments/environment.ts containing your google API details:
-
-    export const environment = {
-        API_URL: 'https://sheets.googleapis.com/v4/spreadsheets/',
-        CLIENT_ID: 'X.apps.googleusercontent.com',
-        SCOPE: 'https://www.googleapis.com/auth/spreadsheets.readonly',
-        SHEET_ID: 'X',
-        production: false,
-    };
-
 Create a Google spreadsheet with named columns. You can duplicate my template here:
 
     https://docs.google.com/spreadsheets/d/1PGFoY15Wi0RFxjycqF_oXYKdjH8IM5k3_IxJLFI90aU/edit#gid=0

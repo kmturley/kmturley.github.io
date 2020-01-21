@@ -1,122 +1,170 @@
 [
   {
     "name": "Albertsons",
-    "images": "../assets/brands/albertsons.svg",
+    "images": [
+      "../assets/brands/albertsons.svg"
+    ],
     "url": "https://www.albertsons.com"
   },
   {
     "name": "Google",
-    "images": "../assets/brands/google.svg",
+    "images": [
+      "../assets/brands/google.svg"
+    ],
     "url": "https://www.google.com"
   },
   {
     "name": "Apple",
-    "images": "../assets/brands/apple.svg",
+    "images": [
+      "../assets/brands/apple.svg"
+    ],
     "url": "https://www.apple.com"
   },
   {
     "name": "Virgin",
-    "images": "../assets/brands/virgin.svg",
+    "images": [
+      "../assets/brands/virgin.svg"
+    ],
     "url": "https://www.virgin.com"
   },
   {
     "name": "Conservation International",
-    "images": "../assets/brands/conservation-international.svg",
+    "images": [
+      "../assets/brands/conservation-international.svg"
+    ],
     "url": "https://www.conservation.org"
   },
   {
     "name": "DoubleClick",
-    "images": "../assets/brands/doubleclick.svg",
+    "images": [
+      "../assets/brands/doubleclick.svg"
+    ],
     "url": "https://www.doubleclickbygoogle.com"
   },
   {
     "name": "Wall Street Journal",
-    "images": "../assets/brands/wall-street-journal.svg",
+    "images": [
+      "../assets/brands/wall-street-journal.svg"
+    ],
     "url": "https://www.wsj.com"
   },
   {
     "name": "Just Eat",
-    "images": "../assets/brands/just-eat.svg",
+    "images": [
+      "../assets/brands/just-eat.svg"
+    ],
     "url": "https://www.just-eat.co.uk"
   },
   {
     "name": "West Elm",
-    "images": "../assets/brands/west-elm.svg",
+    "images": [
+      "../assets/brands/west-elm.svg"
+    ],
     "url": "https://www.westelm.com"
   },
   {
     "name": "Johnson & Johnson",
-    "images": "../assets/brands/johnson-and-johnson.svg",
+    "images": [
+      "../assets/brands/johnson-and-johnson.svg"
+    ],
     "url": "https://www.jnj.com"
   },
   {
     "name": "Viacom",
-    "images": "../assets/brands/viacom.svg",
+    "images": [
+      "../assets/brands/viacom.svg"
+    ],
     "url": "https://www.viacom.com"
   },
   {
     "name": "Novartis",
-    "images": "../assets/brands/novartis.svg",
+    "images": [
+      "../assets/brands/novartis.svg"
+    ],
     "url": "https://www.novartis.com"
   },
   {
     "name": "Sainsburys",
-    "images": "../assets/brands/sainsburys.svg",
+    "images": [
+      "../assets/brands/sainsburys.svg"
+    ],
     "url": "https://www.sainsburys.co.uk"
   },
   {
     "name": "Facebook",
-    "images": "../assets/brands/facebook.svg",
+    "images": [
+      "../assets/brands/facebook.svg"
+    ],
     "url": "https://www.facebook.com"
   },
   {
     "name": "The Times",
-    "images": "../assets/brands/the-times.svg",
+    "images": [
+      "../assets/brands/the-times.svg"
+    ],
     "url": "https://www.thetimes.co.uk"
   },
   {
     "name": "YouTube",
-    "images": "../assets/brands/youtube.svg",
+    "images": [
+      "../assets/brands/youtube.svg"
+    ],
     "url": "https://www.youtube.com"
   },
   {
     "name": "UBS",
-    "images": "../assets/brands/ubs.svg",
+    "images": [
+      "../assets/brands/ubs.svg"
+    ],
     "url": "https://www.ubs.com"
   },
   {
     "name": "Philips",
-    "images": "../assets/brands/philips.svg",
+    "images": [
+      "../assets/brands/philips.svg"
+    ],
     "url": "https://www.philips.co.uk"
   },
   {
     "name": "General Electric",
-    "images": "../assets/brands/general-electric.svg",
+    "images": [
+      "../assets/brands/general-electric.svg"
+    ],
     "url": "https://www.ge.com/uk"
   },
   {
     "name": "Barclays",
-    "images": "../assets/brands/barclays.svg",
+    "images": [
+      "../assets/brands/barclays.svg"
+    ],
     "url": "https://www.barclays.co.uk"
   },
   {
     "name": "MTV",
-    "images": "../assets/brands/mtv.svg",
+    "images": [
+      "../assets/brands/mtv.svg"
+    ],
     "url": "https://www.mtv.com"
   },
   {
     "name": "Al Jazeera",
-    "images": "../assets/brands/al-jazeera.svg",
+    "images": [
+      "../assets/brands/al-jazeera.svg"
+    ],
     "url": "https://www.aljazeera.com"
   },
   {
     "name": "Santander",
-    "images": "../assets/brands/santander.svg",
+    "images": [
+      "../assets/brands/santander.svg"
+    ],
     "url": "https://www.santanderbank.com"
   },
   {
     "name": "DHL",
-    "images": "../assets/brands/dhl.svg",
+    "images": [
+      "../assets/brands/dhl.svg"
+    ],
     "url": "https://www.dhl.com"
   }
 ]

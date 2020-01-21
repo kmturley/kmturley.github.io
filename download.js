@@ -5,17 +5,24 @@ const slugify = require('slugify');
 
 const sheet_id = '1KhjaYHc01RKvq5UrJlTdi9mz5O9IcTF5Uh-7bYdlsks';
 
-const sheet_range = 'projects!A1:H50';
-const project_json = './src/assets/json/projects.json';
-
-// const sheet_range = 'articles!A1:C25';
-// const project_json = './src/assets/json/articles.json';
-
-// const sheet_range = 'brands!A1:C25';
-// const project_json = './src/assets/json/brands.json';
-
-// const sheet_range = 'awards!A1:F25';
-// const project_json = './src/assets/json/awards.json';
+const pages = [
+  {
+    project_json: './src/assets/json/articles.json',
+    sheet_range: 'articles!A1:C25'
+  },
+  {
+    project_json: './src/assets/json/awards.json',
+    sheet_range: 'awards!A1:F25'
+  },
+  {
+    project_json: './src/assets/json/brands.json',
+    sheet_range: 'brands!A1:C25'
+  },
+  {
+    project_json: './src/assets/json/projects.json',
+    sheet_range: 'projects!A1:H50'
+  }
+];
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
@@ -28,7 +35,11 @@ const TOKEN_PATH = 'token.json';
 fs.readFile('credentials.json', (err, content) => {
   if (err) return console.log('Error loading client secret file:', err);
   // Authorize a client with credentials, then call the Google Sheets API.
-  authorize(JSON.parse(content), listMajors);
+  authorize(JSON.parse(content), (auth) => {
+    pages.forEach((page) => {
+      listMajors(auth, page);
+    });
+  });
 });
 
 /**
@@ -86,11 +97,11 @@ function getNewToken(oAuth2Client, callback) {
  * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
-function listMajors(auth) {
+function listMajors(auth, page) {
   const sheets = google.sheets({version: 'v4', auth});
   sheets.spreadsheets.values.get({
     spreadsheetId: sheet_id,
-    range: sheet_range,
+    range: page.sheet_range,
   }, (err, res) => {
     if (err) return console.log('The API returned an error: ' + err);
     const rows = res.data.values;
@@ -101,8 +112,8 @@ function listMajors(auth) {
           projects.push(buildJsonResult(rows[0], row));
         }
       });
-      fs.writeFile(project_json, JSON.stringify(projects, null, 2), () => {
-        console.log('Created ' + project_json);
+      fs.writeFile(page.project_json, JSON.stringify(projects, null, 2), () => {
+        console.log('Created ' + page.project_json);
       });
     } else {
       console.log('No data found.');
@@ -124,11 +135,22 @@ function buildJsonResult(headers, currentLine) {
     // force new lines with label ending in (s)
     if (typeof value === 'string' && propertyName.charAt(propertyName.length - 1) === 's') {
       value = value.split('\n');
+      if (!Array.isArray(value)) {
+        value = [value];
+      }
+      value.map((val) => {
+        if (Number(val)) {
+          return Number(val);
+        }
+        return val;
+      });
+    } else {
+      // convert string fields containing only numbers
+      if (Number(value)) {
+        value = Number(value);
+      }
     }
-    // convert string fields containing only numbers
-    // if (Number(value)) {
-    //   value = Number(value);
-    // }
+    
     jsonObject[propertyName] = value;
   }
   return jsonObject;
