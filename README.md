@@ -50,8 +50,7 @@ In Chrome Dev tools, copy your Authorization Header Token from a Google Sheets r
 
 Then run the command to build static:
 
-    npm run build:client-and-server-bundles && npm run compile:server && npm run serve:ssr
-    npm run generate:prerender
+    npm run build
 
 Or to build with custom base url:
 
