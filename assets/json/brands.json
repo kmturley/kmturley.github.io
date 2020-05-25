@@ -1,5 +1,12 @@
 [
   {
+    "name": "Snap",
+    "images": [
+      "../assets/brands/snap.svg"
+    ],
+    "url": "https://www.snapchat.com"
+  },
+  {
     "name": "Albertsons",
     "images": [
       "../assets/brands/albertsons.svg"

@@ -1,11 +1,91 @@
 [
   {
+    "name": "Focus",
+    "client": "Snap",
+    "images": [
+      "../assets/projects/snap-focus.jpg"
+    ],
+    "description": "Snapchat needed an innovative, best-in-class learning experience and product to support enterprise audiences utilizing their Ads Manager within their ForBusiness ecosystem. ",
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Architecture",
+      "Engineering"
+    ],
+    "technologies": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "years": [
+      "2020"
+    ]
+  },
+  {
+    "name": "For Games",
+    "client": "Google",
+    "images": [
+      "../assets/projects/google-for-games.jpg"
+    ],
+    "description": "Marketing site to centralize all Google company-wide Games intiatives into one place for the Games Industry.",
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Engineering"
+    ],
+    "technologies": [
+      "JavaScript",
+      "SASS",
+      "Python",
+      "AppEngine",
+      "Google Cloud"
+    ],
+    "years": [
+      "2018",
+      "2019",
+      "2020"
+    ]
+  },
+  {
     "name": "Smart Home Training",
     "client": "Google",
     "images": [
       "../assets/projects/google-smart-home-training.jpg"
     ],
     "description": "An interactive gamified digital learning experience, teaching users about the various use-cases of Google products within a house.",
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Ideation",
+      "Prototyping",
+      "Engineering"
+    ],
+    "technologies": [
+      "JavaScript",
+      "TypeScript",
+      "Angular",
+      "SASS",
+      "Python",
+      "AppEngine",
+      "Google Cloud"
+    ],
+    "years": [
+      "2019"
+    ]
+  },
+  {
+    "name": "In-store Kiosk",
+    "client": "Albertsons",
+    "images": [
+      "../assets/projects/albertsons-instore-kiosk.jpg"
+    ],
+    "description": [
+      "Albertsons, a leading grocery retailer, wanted to improve the employee experience, including hiring. After conducting extensive field research about the employee experience and journey, we found that many employees had difficulty finding out about the jobs available and their requirements. They also had difficulty applying using paper forms or complex online multi-steps forms.",
+      "We designed and prototyped a touchscreen hiring terminal for stores, which allowed prospective employees to browse and find about different roles, and then apply to job positions there and then."
+    ],
     "services": [
       "Product Discovery & Delivery"
     ],
@@ -74,17 +154,41 @@
     ]
   },
   {
-    "name": "For Games",
-    "client": "Google",
+    "name": "Loyalty Innovation",
+    "client": "Albertsons",
     "images": [
-      "../assets/projects/google-for-games.jpg"
+      "../assets/projects/albertsons-loyalty.jpg"
     ],
-    "description": "Marketing site to centralize all Google company-wide Games intiatives into one place for the Games Industry.",
+    "description": [
+      "Albertsons, a leading grocery retailer, wanted ",
+      "to identify new ways to generate customer stickiness and brand affinity beyond its current deals, discounts, and rewards program. "
+    ],
     "services": [
       "Product Discovery & Delivery"
     ],
     "activities": [
-      "Engineering"
+      "Ideation",
+      "Prototyping"
+    ],
+    "technologies": [
+      "none"
+    ],
+    "years": [
+      "2019"
+    ]
+  },
+  {
+    "name": "Investor Dashboard",
+    "client": "AIG",
+    "images": [
+      "../assets/projects/aig-investor-dashboard.jpg"
+    ],
+    "description": "Machine-learning dashboard showing realtime news rated by relevance to investments",
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Prototyping"
     ],
     "technologies": [
       "JavaScript",
@@ -94,7 +198,6 @@
       "Google Cloud"
     ],
     "years": [
-      "2018",
       "2019"
     ]
   },
@@ -256,6 +359,37 @@
     ]
   },
   {
+    "name": "Buy Flow",
+    "client": "Google",
+    "images": [
+      "../assets/projects/google-buy-flow.jpg"
+    ],
+    "description": [
+      "Google wanted to sell hardware products directly to Enterprise customer. The existing Google Store was not able to account for more the complex license and bulk purchasing options required.",
+      "We designed and built a custom storefront which adhered to Google’s design and technology standards. This included customer accounts, baskets and orders sent to approved fulfilment partners.\\",
+      "We versioned the Buy Flow for multiple hardware products including Chrome for Work, Jamboard US & UK, and Hangouts Meet.",
+      ""
+    ],
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Architecture",
+      "Engineering"
+    ],
+    "technologies": [
+      "Python",
+      "JavaScript",
+      "CSS",
+      "HTML",
+      "AppEngine",
+      "Google Cloud"
+    ],
+    "years": [
+      "2018"
+    ]
+  },
+  {
     "name": "Product Innovation",
     "client": "Wall Street Journal",
     "images": [
@@ -329,6 +463,26 @@
       "2016",
       "2017",
       "2018"
+    ]
+  },
+  {
+    "name": "Experiential Shopping",
+    "client": "West Elm",
+    "images": [
+      "../assets/projects/west-elm-experiential-shopping.jpg"
+    ],
+    "description": "west elm wanted to re-imagine the online visual shopping experience to increase conversions, making online as emotionally fulfilling as the in-store, catalogue and social experience.",
+    "services": [
+      "Innovation & Experimentation"
+    ],
+    "activities": [
+      "Architecture"
+    ],
+    "technologies": [
+      "none"
+    ],
+    "years": [
+      "2017"
     ]
   },
   {
@@ -629,6 +783,33 @@
     ]
   },
   {
+    "name": "Brandcast Event App",
+    "client": "YouTube",
+    "images": [
+      "../assets/projects/youtube-brandcast-event-app.jpg"
+    ],
+    "description": [
+      "Once a year, YouTube pulls out all the stops to showcase its unique programming line-up and original content in a big way, giving advertisers a glimpse of its loyal audience of amateur video creators at a spectacular event called YouTube Brandcast.",
+      "We designed and built a mobile app for attendees to get venue information, event schedules and coverage in realtime. The app acts as a personal slideshow display for the keynote speaker. During keynote speeches, speaker’s slides were pushed to audience members’ mobile devices.",
+      ""
+    ],
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Prototyping",
+      "Engineering"
+    ],
+    "technologies": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "years": [
+      "2013"
+    ]
+  },
+  {
     "name": "Data Cockpit",
     "client": "UBS",
     "images": [
@@ -804,6 +985,36 @@
       "2009",
       "2010",
       "2011"
+    ]
+  },
+  {
+    "name": "iAds",
+    "client": "Apple",
+    "images": [
+      "../assets/projects/apple-iads.jpg"
+    ],
+    "description": [
+      "For four years we were Apple’s exclusive EMEA partner, creating compelling interactive mobile experiences for the world’s leading brands such as Guinness, BMW, Renault, Proctor and Gamble using Apple’s iAds platform.",
+      "We partnered and provided UX and creative support to media buyers looking to create exceptional iAd experiences. For Jaguar and BMW we created and built responsive iAd which allow users to see what it feels like to sit behind the wheel of one of their brand new cars.",
+      ""
+    ],
+    "services": [
+      "Product Discovery & Delivery"
+    ],
+    "activities": [
+      "Prototyping",
+      "Engineering"
+    ],
+    "technologies": [
+      "JavaScript",
+      "CSS",
+      "HTML"
+    ],
+    "years": [
+      "2009",
+      "2010",
+      "2011",
+      "2012"
     ]
   },
   {
