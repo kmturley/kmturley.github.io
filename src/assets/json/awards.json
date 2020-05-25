@@ -1,5 +1,45 @@
 [
   {
+    "name": "Communicator Awards",
+    "position": "Won",
+    "images": [
+      "../assets/awards/communicator-awards.png"
+    ],
+    "description": "Google Smart Home eLearning wins 2020 Communicator Award",
+    "year": 2020,
+    "url": "https://www.communicatorawards.com/winners/list/?event=1035&category=40&award=8"
+  },
+  {
+    "name": "Hermes Creative Awards",
+    "position": "Mention",
+    "images": [
+      "../assets/awards/hermes-creative-awards.png"
+    ],
+    "description": "Reviewed has received an Honorable Mention in the Website Overall category",
+    "year": 2020,
+    "url": "https://enter.hermesawards.com/entry/reviewed-com/"
+  },
+  {
+    "name": "Hermes Creative Awards",
+    "position": "Won",
+    "images": [
+      "../assets/awards/hermes-creative-awards.png"
+    ],
+    "description": "YouTube Space has won Gold in the Website Redesign category",
+    "year": 2020,
+    "url": "https://enter.hermesawards.com/entry/youtube-space/"
+  },
+  {
+    "name": "Hermes Creative Awards",
+    "position": "Runner-up",
+    "images": [
+      "../assets/awards/hermes-creative-awards.png"
+    ],
+    "description": "Mailchimp has won Platinum in the E-Learning Platform category",
+    "year": 2020,
+    "url": "https://enter.hermesawards.com/entry/mailchimp-academy/"
+  },
+  {
     "name": "Davey Awards",
     "position": "Won",
     "images": [
